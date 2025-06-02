@@ -17,7 +17,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     email: "vkumar26062003@gmail.com",
     linkedin: "https://linkedin.com/in/vishal-kumar2606",
     github: "https://github.com/vk26kumar",
-    resume: "https://drive.google.com/file/d/1sSFXRQOnUtlb9R-7bQOJt3cdcuDpuJC1/view",
+    resume: "https://drive.google.com/file/d/1I6ZVffGRXJ589ZjZ0joUi6DQsQT49R-7/view?usp=sharing",
   },
   academicDetails: [
     {
