@@ -1,9 +1,9 @@
 
 import { PortfolioData } from './types';
-const profile = "/components/public/profile.png";
-const travelRootsImage = "/components/public/Travel.png";
-const aiEvaluateImage = "/components/public/evalute.png";
-const dineTimeImage = "/components/public/Dine.png";
+const profile = "/profile.png";
+const travelRootsImage = "/Travel.png";
+const aiEvaluateImage = "/evalute.png";
+const dineTimeImage = "/Dine.png";
 
 export const ACCENT_COLOR = "teal"; 
 
@@ -170,5 +170,18 @@ export const PORTFOLIO_DATA: PortfolioData = {
       ]
     }
   ],
-  interestsSummary: "Passionate about Full-Stack Development, specializing in scalable web applications, UI/UX design, and API development. Keenly interested in Artificial Intelligence & Data Science, including Machine Learning (ML), Deep Learning (DL), Natural Language Processing (NLP), and Time Series Forecasting. Core curriculum knowledge includes Data Structures, Digital Logic & Design, Object-Oriented Programming, Database Management Systems, and Design & Analysis of Algorithms.",
+  interestsSummary: [
+    "Passionate about Full-Stack Development, specializing in scalable web applications, UI/UX design, and API development.",
+    "Keenly interested in Artificial Intelligence & Data Science, including:",
+    "  - Machine Learning (ML)",
+    "  - Deep Learning (DL)",
+    "Core curriculum knowledge includes:",
+    "  - Data Structures",
+    "  - Digital Logic & Design",
+    "  - Object-Oriented Programming",
+    "  - Database Management Systems",
+    "  - Design & Analysis of Algorithms",
+    "Enjoys exploring new technologies, participating in hackathons, and collaborating on open-source projects.",
+    "Always eager to learn, adapt, and contribute to innovative solutions that make a real-world impact."
+  ],
 };

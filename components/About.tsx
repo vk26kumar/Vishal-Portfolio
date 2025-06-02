@@ -27,11 +27,12 @@ const About: React.FC<AboutProps> = ({ interestsSummary }) => {
       </div>
 
       <div className="content-box">
-        <p className="about-text">{interestsSummary}</p>
-        <button onClick={() => setIsDark(!isDark)} className="toggle-btn">
-          Switch to {isDark ? 'Light' : 'Dark'} Mode
-        </button>
-      </div>
+        {interestsSummary.map((line, index) => (
+      <p className="about-text" key={index}>{line}
+     </p>
+     ))}
+     </div>
+
     </Section>
   );
 };
