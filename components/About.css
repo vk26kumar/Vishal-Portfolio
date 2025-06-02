@@ -1,0 +1,73 @@
+.about-section {
+  background-color: #1e293b; /* same as bg-slate-800 */
+  padding: 100px 20px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.typing-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.typing-text {
+  font-size: 24px;
+  color: #cbd5e1; /* text-slate-300 */
+  border-right: 2px solid #cbd5e1;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite;
+}
+
+.content-box {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(30, 41, 59, 0.8); /* transparent card */
+  color: #cbd5e1;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 2;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.toggle-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--accent-color, #ff6a00);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: darkorange;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Optional light mode text-only swap */
+body.light-mode .about-text,
+body.light-mode .typing-text {
+  color: #1e293b;
+}
+
+body.light-mode .content-box {
+  background-color: rgba(255, 255, 255, 0.85);
+}
