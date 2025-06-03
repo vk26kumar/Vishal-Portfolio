@@ -160,13 +160,15 @@ export const PORTFOLIO_DATA: PortfolioData = {
       ]
     },
     {
-      id: "mmmut-reso",
+      id: "hindalco-intern",
       role: "IT INTERN",
       organization: "Hindalco Industries Limited",
       duration: "May 2025 - Ongoing",
       description: [
-        "Contributing to MMMUT.XYZ, a website creating an accessible and dynamic learning environment.",
-        "Promoting academic excellence and continuous growth within the society."
+        "Assisting in the development and maintenance of internal IT systems and applications.",
+        "Collaborating with senior engineers to troubleshoot and resolve technical issues.",
+        "Supporting the deployment and documentation of software solutions.",
+        "Participating in team meetings and contributing to ongoing IT projects."
       ]
     }
   ],
