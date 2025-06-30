@@ -29,7 +29,7 @@ const Achievements: React.FC<AchievementsProps> = ({ achievements, accentColor }
                   rel="noopener noreferrer" 
                   className={`inline-flex items-center text-sm text-${accentColor}-400 hover:text-${accentColor}-300 transition-colors font-medium`}
                 >
-                  View Link <ExternalLinkIcon className="h-3 w-3 ml-1" />
+                  View Certificate <ExternalLinkIcon className="h-3 w-3 ml-1" />
                 </a>
               )}
             </div>

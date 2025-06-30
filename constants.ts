@@ -4,12 +4,13 @@ const profile = "/profile.png";
 const travelRootsImage = "/Travel.png";
 const aiEvaluateImage = "/evalute.png";
 const dineTimeImage = "/Dine.png";
+const renusagarImage = "/renusagar.png";
 
 export const ACCENT_COLOR = "teal"; 
 
 export const PORTFOLIO_DATA: PortfolioData = {
   name: "Vishal Kumar",
-  title: "Full-Stack Developer, App Developer & AI Enthusiast",
+  title: "Full-Stack Developer, APP Developer,API Tester & AI Enthusiast",
   tagline: "Building innovative solutions with a passion for technology and user experience. Exploring the frontiers of AI and scalable web applications.",
   profileImage: profile,
   contact: {
@@ -97,6 +98,25 @@ export const PORTFOLIO_DATA: PortfolioData = {
       ],
       image: dineTimeImage,
     },
+    {
+      id: "about-renusagar",
+      title: "About Renusagar",
+      subtitle: "Campus Information Website (Internship Project)",
+      date: "May 2025 - June 2025",
+      githubRepo: "https://github.com/vk26kumar/About_Renusgar-INTERNSHIP", 
+      liveDemo: "about-renusgar-internship.vercel.app",
+      techStack: ["React.js", "TypeScript", "Tailwind CSS", "Vercel"],
+      description: [
+        "Developed a live, responsive website to establish the digital identity of Renusagar Power Division township.",
+        "Designed core sections including Home, Timeline, Facilities, Campus Layout, Residential, School & Hospital, and Gallery.",
+        "Built with scalable frontend architecture using React.js and TypeScript.",
+        "Applied Tailwind CSS for clean, mobile-responsive UI styling.",
+        "Deployed on Vercel with continuous deployment and automatic HTTPS.",
+        "Collaborated with a diverse team of interns and learned corporate workflows, team communication, and project delivery practices.",
+        "Received mentorship from industry professionals, enhancing my professional development and technical skills."
+      ],
+      image: renusagarImage,
+    },
   ],
   achievements: [
     {
@@ -108,6 +128,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "gdg-hackathon",
       text: "4th Place - GDG Hackathon (Competed among 90+ teams)",
+      organization: "Google Developer Group (GDG) Gorakhpur",
       link: "https://drive.google.com/file/d/1wCAzGUqhFQIq2AoxkhVC8hDUYLBl1tiG/view", 
     },
     {
@@ -115,6 +136,12 @@ export const PORTFOLIO_DATA: PortfolioData = {
       text: "3rd Place - Snap Shuffles Competition",
       organization: "ACE Civil Engineering Society",
       link: "#", // Resume says LINK
+    },
+    {
+      id: "internship-renusagar",
+      text: "IT Intern - Aditya Birla Group - Hindalco Industries Limited",
+      organization: "Renusagar Power Division",
+      link: "https://drive.google.com/file/d/1UjFBFPp4kX1biT9tJScWsTKimtgX7wXW/view?usp=sharing", 
     },
   ],
   skills: [
@@ -137,21 +164,21 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "ui-frameworks",
       name: "UI Frameworks",
       skills: [
-        { id: "bootstrap", name: "Bootstrap" }, { id: "tailwindcss", name: "Tailwind CSS" }, { id: "materialui", name: "Material UI" }
+        { id: "bootstrap", name: "Bootstrap" }, { id: "tailwindcss", name: "Tailwind CSS" }, { id: "materialui", name: "Material UI" },{ id: "figma", name: "Figma" }
       ],
     },
     {
       id: "tools",
       name: "Tools & Platforms",
       skills: [
-        { id: "git", name: "Git" }, { id: "github", name: "GitHub" }
+        { id: "git", name: "Git" }, { id: "github", name: "GitHub" },{ id: "postman", name: "Postman" },{ id: "vscode", name: "VS Code" }
       ],
     },
   ],
   responsibilities: [
     {
       id: "mmmut-reso",
-      role: "Executive Member – MMMUT Reso",
+      role: "Development Team Member – MMMUT Reso",
       organization: "Society MMMUT",
       duration: "April 2025 - Ongoing",
       description: [
@@ -162,14 +189,17 @@ export const PORTFOLIO_DATA: PortfolioData = {
     {
       id: "hindalco-intern",
       role: "IT INTERN",
-      organization: "Hindalco Industries Limited",
-      duration: "May 2025 - Ongoing",
+      organization: "Aditya Birla Group - Hindalco Industries Limited",
+      duration: "May 2025 - June 2025",
       description: [
-        "Assisting in the development and maintenance of internal IT systems and applications.",
-        "Collaborating with senior engineers to troubleshoot and resolve technical issues.",
-        "Supporting the deployment and documentation of software solutions.",
-        "Participating in team meetings and contributing to ongoing IT projects."
-      ]
+        "Worked on a live project titled “About Renusagar Webpage” to establish the campus's digital identity.",
+        "Designed and developed a responsive website showcasing township overview, facilities, housing, education, and healthcare.",
+        "Collaborated with interns from various colleges across India, promoting cross-institute teamwork and idea sharing.",
+        "Gained real-world experience in office environment, task ownership, team meetings, and professional communication.",
+        "Received mentorship from Mr. Sumit Singh (Lead – Applications, IT Department) and achieved a Very Good performance rating.",
+        "Tech stack used: React.js, Tailwind CSS, deployed via Vercel with CI/CD pipeline."
+      ],
+      link: "https://drive.google.com/file/d/1kskI9N-xbs0K_z7BBK-eGYoXr-nWQTGO/view?usp=sharing",
     }
   ],
   interestsSummary: [

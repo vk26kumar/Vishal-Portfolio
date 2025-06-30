@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Section from './Section';
 import { Responsibility } from '../types';
 import { BriefcaseIcon } from './icons/GenericIcons';
-import "./Experience.css"; 
+import "./Experience.css";
 
 interface ExperienceProps {
   responsibilities: Responsibility[];
@@ -43,11 +43,23 @@ const Experience: React.FC<ExperienceProps> = ({ responsibilities, accentColor }
               </div>
             </div>
             <p className="text-sm text-slate-400 mb-3">{resp.duration}</p>
-            <ul className="list-disc list-inside space-y-1 text-slate-300">
+            <ul className="list-disc list-inside space-y-1 text-slate-300 mb-2">
               {resp.description.map((desc, i) => (
                 <li key={i}>{desc}</li>
               ))}
             </ul>
+
+            {/* ✅ Conditionally render the link if provided */}
+            {resp.link && (
+              <a
+                href={resp.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-${accentColor}-400  hover:text-${accentColor}-300 transition`}
+              >
+                View Project Report
+              </a>
+            )}
           </motion.div>
         ))}
       </div>

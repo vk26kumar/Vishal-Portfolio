@@ -53,6 +53,7 @@ export interface Responsibility {
   organization: string;
   duration: string;
   description: string[];
+  link?: string; // Optional link for more details
 }
 
 export interface PortfolioData {

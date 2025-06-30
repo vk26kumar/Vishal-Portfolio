@@ -1,7 +1,8 @@
-import React from 'react';
-import { ContactInfo } from '../types';
-import { GithubIcon, LinkedInIcon, EmailIcon } from './icons/SocialIcons';
-import { ArrowDownIcon } from './icons/GenericIcons';
+import React from "react";
+import { ContactInfo } from "../types";
+import { GithubIcon, LinkedInIcon, EmailIcon } from "./icons/SocialIcons";
+import { ArrowDownIcon } from "./icons/GenericIcons";
+import Tilt from "react-parallax-tilt";
 
 interface HeroProps {
   name: string;
@@ -12,7 +13,14 @@ interface HeroProps {
   accentColor: string;
 }
 
-const Hero: React.FC<HeroProps> = ({ name, title, tagline, contact, profileImage, accentColor }) => {
+const Hero: React.FC<HeroProps> = ({
+  name,
+  title,
+  tagline,
+  contact,
+  profileImage,
+  accentColor,
+}) => {
   return (
     <section
       id="hero"
@@ -27,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({ name, title, tagline, contact, profileImage
           {/* Text */}
           <div className="md:w-2/3 text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-              Hi, I'm{' '}
+              Hi, I'm{" "}
               <span className={`text-${accentColor}-400 drop-shadow-md`}>
                 {name}
               </span>
@@ -92,11 +100,23 @@ const Hero: React.FC<HeroProps> = ({ name, title, tagline, contact, profileImage
 
           {/* Profile Image */}
           <div className="md:w-1/3 flex justify-center">
-            <img
-              src={profileImage}
-              alt={name}
-              className={`w-64 h-64 md:w-72 md:h-72 rounded-full object-cover border-4 border-${accentColor}-500 shadow-lg transform hover:scale-105 transition duration-300`}
-            />
+            <Tilt
+              glareEnable={true}
+              glareMaxOpacity={0.45}
+              glareColor="#ffffff"
+              glarePosition="all"
+              scale={1.05}
+              tiltMaxAngleX={15}
+              tiltMaxAngleY={15}
+              transitionSpeed={400}
+              className="rounded-full"
+            >
+              <img
+                src={profileImage}
+                alt={name}
+                className={`w-64 h-64 md:w-72 md:h-72 rounded-full object-cover border-4 border-${accentColor}-500 shadow-lg`}
+              />
+            </Tilt>
           </div>
         </div>
       </div>
