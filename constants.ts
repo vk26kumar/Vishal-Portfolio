@@ -5,6 +5,7 @@ const travelRootsImage = "/Travel.png";
 const aiEvaluateImage = "/evalute.png";
 const dineTimeImage = "/Dine.png";
 const renusagarImage = "/renusagar.png";
+const carbonIQImage = "/carbon_iq.png";
 
 export const ACCENT_COLOR = "teal"; 
 
@@ -49,7 +50,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       title: "Travel Roots",
       subtitle: "Full-Stack Web Application",
       date: "February 2025",
-      liveDemo: "https://travel-roots.onrender.com/listings", // Placeholder as per resume, update if available
+      liveDemo: "https://travel-roots.onrender.com/listings", 
       techStack: ["MongoDB", "Express.js", "React", "Node.js", "Passport.js", "Geoapify", "Joi", "Multer"],
       description: [
         "Designed and implemented a scalable backend using Node.js and Express.js, following MVC architecture.",
@@ -99,6 +100,25 @@ export const PORTFOLIO_DATA: PortfolioData = {
       image: dineTimeImage,
     },
     {
+      id: "carbon-iq",
+      title: "Carbon IQ",
+      subtitle: "Carbon Footprint Tracker APP (Hackathon Project)",
+      date: "June 2025",
+      githubRepo: "https://github.com/vk26kumar/Carbon-IQ", 
+      liveDemo: "https://wallmart-fd89e.web.app/", 
+      techStack: ["React Native", "Expo Go", "Firebase Firestore", "i18n-js", "react-native-chart-kit", "CSV Export"],
+      description: [
+          "Designed a multilingual carbon footprint reporting app for small vendors.",
+          "Enabled form-based carbon data entry for Textile and Dairy industries.",
+          "Used government and international benchmarks for emission scoring.",
+          "Calculated total and normalized emission scores from user input.",
+          "Displayed detailed analytics using line and bar charts for trends and comparison.",
+          "Exported vendor report data as downloadable CSV files for transparency.",
+          "Built and tested using Expo Go and EAS Build for public distribution."
+      ],
+      image: carbonIQImage,
+    },
+    {
       id: "about-renusagar",
       title: "About Renusagar",
       subtitle: "Campus Information Website (Internship Project)",
@@ -135,13 +155,19 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "snap-shuffles",
       text: "3rd Place - Snap Shuffles Competition",
       organization: "ACE Civil Engineering Society",
-      link: "#", // Resume says LINK
+      link: "https://drive.google.com/file/d/1iKxiZuWsc-drN-0QAr2Dvc_vpgDDlv2I/view?usp=sharing", // Resume says LINK
     },
     {
       id: "internship-renusagar",
       text: "IT Intern - Aditya Birla Group - Hindalco Industries Limited",
       organization: "Renusagar Power Division",
       link: "https://drive.google.com/file/d/1UjFBFPp4kX1biT9tJScWsTKimtgX7wXW/view?usp=sharing", 
+    },
+    {
+      id: "Social-internship",
+      text: "Social Internship",
+      organization: "Save Child Beggar Foundation - Delhi",
+      link: "https://drive.google.com/file/d/1UoEEHSBOfR92V3Pi7dLSCoHjdYEv4tsK/view?usp=sharing", 
     },
   ],
   skills: [
@@ -200,6 +226,18 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "Tech stack used: React.js, Tailwind CSS, deployed via Vercel with CI/CD pipeline."
       ],
       link: "https://drive.google.com/file/d/1kskI9N-xbs0K_z7BBK-eGYoXr-nWQTGO/view?usp=sharing",
+    },
+    {
+      id: "social-internship",
+      role: "Social Internship",
+      organization: "Save Child Beggar Foundation - Delhi",
+      duration: "June 2025",
+      description: [
+        "It is an Online Social Internship",
+        "Worked under the theme of SOCIAL HEALTH AND SOCIAL EDUCATION",
+        "Contributed to the foundation's mission of improving the lives of underprivileged children through education and health initiatives.",
+      ],
+      link: "https://drive.google.com/file/d/1tirGHbP7IH_7IJNeP6cKe9a0EtY00kkJ/view?usp=sharing",
     }
   ],
   interestsSummary: [
