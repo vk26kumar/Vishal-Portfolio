@@ -19,7 +19,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
     email: "vkumar26062003@gmail.com",
     linkedin: "https://linkedin.com/in/vishal-kumar2606",
     github: "https://github.com/vk26kumar",
-    resume: "https://drive.google.com/file/d/19RsZVbE4aZpjqrC_1C_gI9gMx7_FK5hg/view?usp=sharing",
+    resume: "https://drive.google.com/file/d/1P-z0EPttShvzXap8mjie2w952KetvynT/view?usp=sharing",
   },
   academicDetails: [
     {
@@ -86,7 +86,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       subtitle: "Restaurant Reservation Mobile App (Mobile Project)",
       date: "May 2025",
       githubRepo: "https://github.com/vk26kumar/Dine_Time", 
-      demoVideo: "https://drive.google.com/file/d/1RlG27_0I2PsD9izKmgjPzac8MuOPFy41/view", 
+      apk_link: "https://drive.google.com/file/d/1GKMG9-JWUVZm-tp3u9P3uh0qjEjt1q-E/view", 
       uiPdf: "https://drive.google.com/file/d/1g7f8dP_8vHpLLScrYvwH82NloiTz-37c/view", 
       techStack: ["React Native", "Expo Go", "Firebase", "Google Maps API"],
       description: [
@@ -105,7 +105,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       subtitle: "Carbon Footprint Tracker APP (Hackathon Project)",
       date: "June 2025",
       githubRepo: "https://github.com/vk26kumar/Carbon-IQ", 
-      liveDemo: "https://wallmart-fd89e.web.app/", 
+      apk_link: "https://drive.google.com/file/d/1OXa4h66cdnP-Os2Lz7PSScqKskfksDl8/view", 
       techStack: ["React Native", "Expo Go", "Firebase Firestore", "i18n-js", "react-native-chart-kit", "CSV Export"],
       description: [
           "Designed a multilingual carbon footprint reporting app for small vendors.",
@@ -151,11 +151,29 @@ export const PORTFOLIO_DATA: PortfolioData = {
       organization: "Google Developer Group (GDG) Gorakhpur",
       link: "https://drive.google.com/file/d/1wCAzGUqhFQIq2AoxkhVC8hDUYLBl1tiG/view", 
     },
+    { 
+      id: "Code for Bharat Hackathon",
+      text: "Qualified till Pre Final Round of Code for Bharat Hackathon-Season 2 (Microsoft) among 10,500+.",
+      organization: "Microsoft India",
+      link: "#",
+    },
+    {
+      id: "Sparkathon",
+      text: "Participated in Sparkathon – Walmart All India Hackathon.",
+      organization: "Wallmart India",
+      link: "https://drive.google.com/file/d/1sVrlKyl8Q8JHjp2ToS-5ipJiCrpa7c1k/view", 
+    },
+    {
+      id: "SIH-2025",
+      text: "Core Organizing Committee Member, Internal Smart India Hackathon (SIH’25), MMMUT.",
+      organization: "Madan Mohan Malaviya University of Technology",
+      link: "https://drive.google.com/file/d/1lArbjNNC6A_E4ZtNhRNGTYZh6d3T1b8m/view", 
+    },
     {
       id: "snap-shuffles",
       text: "3rd Place - Snap Shuffles Competition",
       organization: "ACE Civil Engineering Society",
-      link: "https://drive.google.com/file/d/1iKxiZuWsc-drN-0QAr2Dvc_vpgDDlv2I/view?usp=sharing", // Resume says LINK
+      link: "https://drive.google.com/file/d/1iKxiZuWsc-drN-0QAr2Dvc_vpgDDlv2I/view?usp=sharing", 
     },
     {
       id: "internship-renusagar",
@@ -175,7 +193,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       id: "languages",
       name: "Programming Languages",
       skills: [
-        { id: "c", name: "C" }, { id: "cpp", name: "C++" }, { id: "html", name: "HTML" }, { id: "css", name: "CSS" }, { id: "javascript", name: "JavaScript" }
+        { id: "c", name: "C" }, { id: "cpp", name: "C++" }, { id: "html", name: "HTML" }, { id: "css", name: "CSS" }, { id: "javascript", name: "JavaScript" }, { id: "python", name: "Python" }      
       ],
     },
     {
@@ -183,7 +201,7 @@ export const PORTFOLIO_DATA: PortfolioData = {
       name: "Libraries & Frameworks",
       skills: [
         { id: "mongodb", name: "MongoDB" }, { id: "express", name: "Express.js" }, { id: "reactjs", name: "ReactJS" }, 
-        { id: "reactnative", name: "React Native (Expo)" }, { id: "nodejs", name: "Node.js" }, { id: "restapi", name: "RESTful API" }
+        { id: "reactnative", name: "React Native (Expo)" }, { id: "nodejs", name: "Node.js" }, { id: "restapi", name: "RESTful API" }, { id: "passportjs", name: "Passport.js" }, { id: "OpenAI", name: "OpenAI API" }
       ],
     },
     {
@@ -198,6 +216,13 @@ export const PORTFOLIO_DATA: PortfolioData = {
       name: "Tools & Platforms",
       skills: [
         { id: "git", name: "Git" }, { id: "github", name: "GitHub" },{ id: "postman", name: "Postman" },{ id: "vscode", name: "VS Code" }
+      ],
+    },
+    {
+      id: "DevOps & Deployment Tools:",
+      name: "DevOps & Deployment Tools:",
+      skills: [
+        { id: "Docker", name: "Docker" }, { id: "Firebase", name: "Firebase" },{ id: "Render", name: "Render" },{ id: "Vercal", name: "Vercal" }, { id: "EAS Build", name: "EAS Build" },{ id: "CI/CD", name: "CI/CD"},{ id: "AWS", name: "AWS" }
       ],
     },
   ],
@@ -226,6 +251,18 @@ export const PORTFOLIO_DATA: PortfolioData = {
         "Tech stack used: React.js, Tailwind CSS, deployed via Vercel with CI/CD pipeline."
       ],
       link: "https://drive.google.com/file/d/1kskI9N-xbs0K_z7BBK-eGYoXr-nWQTGO/view?usp=sharing",
+    },
+    {
+      id: "Organizer-SIH-2025",
+      role: "Organizer - Smart India Hackathon (SIH’25)",
+      organization: "Madan Mohan Malaviya University of Technology",
+      duration: "Septmenber 2024",
+      description: [
+        "Served as a core organizing committee member for the Internal Smart India Hackathon (SIH’25) at MMMUT.",
+        "Coordinated logistics, participant engagement, and event execution to ensure a successful hackathon experience.",
+        "Collaborated with a diverse team to manage challenges and deliver a seamless event for all participants."
+      ],
+      link: "https://drive.google.com/file/d/1lArbjNNC6A_E4ZtNhRNGTYZh6d3T1b8m/view",
     },
     {
       id: "social-internship",

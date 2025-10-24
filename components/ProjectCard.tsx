@@ -66,6 +66,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, accentColor }) => {
               <VideoCameraIcon className="h-4 w-4 mr-1" /> Demo Video
             </a>
           )}
+          {project.apk_link && (
+            <a
+              href={project.apk_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center text-sm text-${accentColor}-400 hover:text-${accentColor}-300 transition-colors font-medium`}
+            >
+              <VideoCameraIcon className="h-4 w-4 mr-1" /> APK Link
+            </a>
+          )}
           {project.uiPdf && (
             <a
               href={project.uiPdf}
