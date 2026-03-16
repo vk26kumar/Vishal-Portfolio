@@ -5,7 +5,7 @@ import { usePortfolio } from '../context/DataContext'
 export default function Experience() {
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true })
   const { portfolioData } = usePortfolio()
-  const experience = portfolioData.experience || []
+  const experience = [...(portfolioData.experience || [])].reverse()
 
   return (
     <section id="experience" className="py-24 relative" ref={ref}>
@@ -21,24 +21,23 @@ export default function Experience() {
 
         <div className="relative">
           <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#00f5d4] via-[#7c3aed] to-transparent ml-6 md:ml-0 -translate-x-1/2" />
-
           <div className="space-y-12">
             {experience.map((exp, i) => (
               <motion.div key={exp.id}
                 initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.2, duration: 0.7 }}
-                className={`relative flex ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 pl-14 md:pl-0`}
+                className={'relative flex ' + (i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse') + ' items-center gap-8 pl-14 md:pl-0'}
               >
                 <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full border-2 z-10 -translate-x-1/2 ml-6 md:ml-0"
-                  style={{ borderColor: exp.color, background: '#050505', boxShadow: `0 0 15px ${exp.color}` }} />
+                  style={{ borderColor: exp.color, background: '#050505', boxShadow: '0 0 15px ' + exp.color }} />
 
-                <div className={`w-full md:w-[calc(50%-3rem)] ${i % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}>
+                <div className={'w-full md:w-[calc(50%-3rem)] ' + (i % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8')}>
                   <div className="cyber-card p-6 rounded-none hover:border-[#2a2a2a] transition-all duration-300 group">
                     <div className="flex items-start justify-between mb-3">
                       <div>
                         <span className="font-display text-[10px] tracking-widest px-2 py-1 rounded-sm mb-2 inline-block"
-                          style={{ color: exp.color, background: `${exp.color}15`, border: `1px solid ${exp.color}30` }}>
+                          style={{ color: exp.color, background: exp.color + '15', border: '1px solid ' + exp.color + '30' }}>
                           {exp.type}
                         </span>
                         <h3 className="font-display text-base text-white mt-2">{exp.role}</h3>
