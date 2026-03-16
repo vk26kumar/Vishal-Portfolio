@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --cyber-bg: #050505;
+  --cyber-card: #0d0d0d;
+  --cyber-border: #1a1a1a;
+  --cyber-cyan: #00f5d4;
+  --cyber-emerald: #00d68f;
+  --cyber-purple: #7c3aed;
+  --cyber-red: #ff3366;
+  --cyber-yellow: #ffd60a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cyber-bg);
+  color: #e0e0e0;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--cyber-cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transition: transform 0.1s ease;
+  box-shadow: 0 0 10px var(--cyber-cyan), 0 0 20px var(--cyber-cyan);
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--cyber-cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  transition: all 0.15s ease;
+  opacity: 0.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cyber-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cyber-cyan);
+  border-radius: 2px;
+}
+
+/* Noise overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* Glow text */
+.glow-text {
+  text-shadow: 0 0 10px var(--cyber-cyan), 0 0 30px var(--cyber-cyan);
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 10px #7c3aed, 0 0 30px #7c3aed;
+}
+
+/* Gradient border */
+.grad-border {
+  position: relative;
+}
+.grad-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--cyber-cyan), var(--cyber-purple));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  border-radius: inherit;
+}
+
+/* Scanline animation */
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--cyber-cyan), transparent);
+  opacity: 0.3;
+  animation: scan 4s linear infinite;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+@keyframes scan {
+  0% { top: -2px; }
+  100% { top: 100vh; }
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+.glitch::before {
+  color: var(--cyber-cyan);
+  animation: glitch-1 3s infinite;
+  clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+  transform: translate(-4px);
+}
+.glitch::after {
+  color: var(--cyber-red);
+  animation: glitch-2 3s infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
+  transform: translate(4px);
+}
+@keyframes glitch-1 {
+  0%, 90%, 100% { transform: translate(-4px); opacity: 0; }
+  91%, 93% { transform: translate(-4px); opacity: 1; }
+  92% { transform: translate(4px); opacity: 1; }
+}
+@keyframes glitch-2 {
+  0%, 90%, 100% { transform: translate(4px); opacity: 0; }
+  93%, 95% { transform: translate(4px); opacity: 1; }
+  94% { transform: translate(-4px); opacity: 1; }
+}
+
+/* Card hover */
+.cyber-card {
+  background: var(--cyber-card);
+  border: 1px solid var(--cyber-border);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.cyber-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, var(--cyber-cyan), transparent 30%);
+  animation: rotate 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.cyber-card:hover::after {
+  opacity: 0.05;
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Tag styles */
+.tech-tag {
+  background: rgba(0, 245, 212, 0.08);
+  border: 1px solid rgba(0, 245, 212, 0.2);
+  color: var(--cyber-cyan);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.tech-tag:hover {
+  background: rgba(0, 245, 212, 0.15);
+  box-shadow: 0 0 10px rgba(0, 245, 212, 0.3);
+}
+
+/* Progress bar */
+.skill-bar {
+  height: 2px;
+  background: var(--cyber-border);
+  position: relative;
+  overflow: visible;
+}
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyber-cyan), var(--cyber-purple));
+  position: relative;
+  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.skill-bar-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--cyber-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--cyber-cyan);
+}
+
+/* Section heading */
+.section-tag {
+  font-family: 'Space Mono', monospace;
+  color: var(--cyber-cyan);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Timeline */
+.timeline-line {
+  width: 1px;
+  background: linear-gradient(to bottom, var(--cyber-cyan), transparent);
+}
+
+/* Admin hidden button */
+.admin-trigger {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+.admin-trigger:hover {
+  background: var(--cyber-purple);
+  box-shadow: 0 0 15px var(--cyber-purple);
+  transform: scale(1.5);
+}
