@@ -1,6 +1,7 @@
-{
-  "buildCommand": "npm run build",
+Set-Content -Path "vercel.json" -Value '{
+  "version": 2,
+  "buildCommand": "npx vite build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "framework": "vite"
-}
+}'
