@@ -59,25 +59,25 @@ export const DEFAULT_DATA = {
   ],
   experience: [
     {
-      id: 4, role: 'Full Stack Automation & AI Developer Intern',
+      id: 1, role: 'Full Stack Automation & AI Developer Intern',
       company: 'Matus Business Ventures Pvt Ltd',
-      period: 'Feb 2025 - Ongoing', type: 'Industry', color: '#00e5ff',
+      period: 'Feb 2026 - Ongoing', type: 'Industry', color: '#00e5ff',
       points: 'Contributed to real-time full stack development projects, building scalable frontend and backend systems.\nGained hands-on experience in end-to-end web development in a fast-paced industry environment.\nDeveloped and implemented automation workflows and AI-driven solutions for business operations.\nIntegrated AI solutions to support live marketing campaigns and improve operational efficiency.',
     },
     {
-      id: 2, role: 'Development Team Member',
+      id: 3, role: 'Development Team Member',
       company: 'MMMUT Reso | Technical Society MMMUT',
       period: 'July 2025 — Jan 2026', type: 'Tech Society', color: '#7c3aed',
       points: 'Spearheading development of MMMUT.XYZ — an interactive academic platform for 5,000+ students.\nFostering innovation and learning culture through active tech contributions.',
     },
     {
-      id: 1, role: 'IT Intern',
+      id: 2, role: 'IT Intern',
       company: 'Aditya Birla Group — Hindalco Industries',
       period: 'May 2025 — June 2025', type: 'Industry', color: '#00f5d4',
       points: "Engineered and deployed the 'About Renusagar' web platform, establishing the campus's digital identity.\nEnhanced professional skills in corporate collaboration, task ownership, and client communication.",
     },
     {
-      id: 3, role: 'Social Intern',
+      id: 4, role: 'Social Intern',
       company: 'Save Child Beggar Foundation — Delhi',
       period: 'June 2025', type: 'NGO', color: '#ffd60a',
       points: "Executed a social impact initiative under the theme 'Social Health & Social Education'.",
