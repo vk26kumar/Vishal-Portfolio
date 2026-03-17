@@ -5,7 +5,7 @@ import { usePortfolio } from '../context/DataContext'
 export default function Experience() {
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true })
   const { portfolioData } = usePortfolio()
-  const experience = [...(portfolioData.experience || [])].reverse()
+  const experience = portfolioData.experience || []
 
   return (
     <section id="experience" className="py-24 relative" ref={ref}>
