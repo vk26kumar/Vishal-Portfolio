@@ -68,7 +68,7 @@ export const experience = [
     period: "May 2025 — June 2025",
     type: "Industry",
     color: "#00f5d4",
-    certLink: "#",
+    certLink: "https://drive.google.com/file/d/1UjFBFPp4kX1biT9tJScWsTKimtgX7wXW/view?usp=sharing",
     points: [
       "Engineered and deployed the 'About Renusagar' web platform, establishing the campus's digital identity.",
       "Enhanced professional skills in corporate collaboration, task ownership, and client communication.",
@@ -81,7 +81,7 @@ export const experience = [
     period: "July 2025 — Jan 2026",
     type: "Tech Society",
     color: "#7c3aed",
-    certLink: "#",
+    certLink: "https://drive.google.com/file/d/1TbK13LpBtARZWu1gFyq-LNN75A9ECMW4/view?usp=sharing",
     points: [
       "Spearheading development of MMMUT.XYZ — an interactive academic platform for 5,000+ students.",
       "Fostering innovation and learning culture through active tech contributions.",
@@ -94,10 +94,25 @@ export const experience = [
     period: "June 2025",
     type: "NGO",
     color: "#ffd60a",
-    certLink: "#",
+    certLink: "https://drive.google.com/file/d/1UoEEHSBOfR92V3Pi7dLSCoHjdYEv4tsK/view?usp=sharing",
     points: [
       "Executed a social impact initiative under the theme 'Social Health & Social Education'.",
     ],
+  },
+  {
+  id: 4,
+  role: "Full Stack Automation & AI Developer Intern",
+  company: "Matus Business Ventures Pvt Ltd",
+  period: "Feb 2025 - Ongoing",
+  type: "Industry",
+  color: "#00e5ff",
+  certLink: "https://drive.google.com/file/d/1b0U-HXUP5FsiCi1L4Or0RBxeszkyuW9T/view?usp=sharing",
+  points: [
+    "Contributed to real-time full stack development projects, building scalable frontend and backend systems.",
+    "Gained hands-on experience in end-to-end web development in a fast-paced industry environment.",
+    "Developed and implemented automation workflows and AI-driven solutions for business operations.",
+    "Integrated AI solutions to support live marketing campaigns and improve operational efficiency.",
+  ],
   },
 ];
 
@@ -107,11 +122,13 @@ export const projects = [
     title: "AI-Evaluate",
     subtitle: "AI-Powered Answer Sheet Evaluation Engine",
     description:
-      "An AI-powered automated evaluation engine eliminating bias and accelerating grading with interactive learning tools, digital whiteboard, and AI dashboard for insights.",
+      "AI-Powered Grading & Analytics: Engineered an AI-powered automated evaluation engine eliminating bias and accelerating grading."
+      "Integrated interactive learning tools including a digital whiteboard and AI dashboard for insights."
+      "Automated academic reporting using dynamic PPT generation and real-time analytics.",
     tech: ["AI/ML", "React.js", "Node.js", "Express.js", "MongoDB", "JavaScript"],
     links: {
       live: "https://ai-evaluaite-1.onrender.com/",
-      github: "",
+      github: "https://github.com/vk26kumar/AI-EvaluAIte",
     },
     color: "#00f5d4",
     featured: true,
@@ -123,11 +140,15 @@ export const projects = [
     title: "Dine Time",
     subtitle: "Restaurant Reservation Mobile App",
     description:
-      "Production-ready booking app with multi-mode authentication, Google Maps integration, Firebase real-time sync, and public APK release via EAS Build.",
+      "Developed and published a production-ready booking app with Expo & Firebase. "
+      "Implemented multi-mode authentication (email, guest login, Google) with real-time data sync."
+      "Embedded Google Maps API for live location-based restaurant discovery and navigation."
+      "Released APK using EAS Build and facilitated public beta testing."
+      "Configured Firebase Realtime Database for instant booking updates and user history tracking.",
     tech: ["React Native", "Expo", "Firebase", "Google Maps API", "Payment Gateway"],
     links: {
       live: "https://drive.google.com/file/d/1GKMG9-JWUVZm-tp3u9P3uh0qjEjt1q-E/view",
-      github: "",
+      github: "https://github.com/vk26kumar/Dine_Time",
     },
     color: "#7c3aed",
     featured: true,
@@ -139,11 +160,15 @@ export const projects = [
     title: "Travel Roots",
     subtitle: "Full-Stack Booking Platform",
     description:
-      "A full-stack travel booking platform with Passport.js OAuth, Razorpay payment gateway, webhook verification, Helmet security and rate limiting.",
+    "Developed a full-stack booking platform using Node.js, Express (MVC architecture), and MongoDB."
+    "Implemented secure authentication with Passport.js, supporting local login and Google/GitHub OAuth."
+    "Integrated Razorpay payment gateway with server-side verification for secure transactions."
+    "Configured Razorpay Webhooks to handle asynchronous payment events and ensure reliable payment confirmation."
+    "Enhanced backend security using Helmet and rate limiting to prevent abuse and brute-force attacks.",
     tech: ["MongoDB", "Express.js", "Node.js", "EJS", "Passport.js", "Razorpay"],
     links: {
       live: "https://travel-roots.onrender.com/listings",
-      github: "",
+      github: "https://github.com/vk26kumar/Travel_Roots",
     },
     color: "#00d68f",
     featured: true,
@@ -155,7 +180,10 @@ export const projects = [
     title: "Resume-Driven AI Job Automation",
     subtitle: "n8n Automation Workflow",
     description:
-      "Event-driven AI automation converting resume PDFs into personalized job recommendations using LLMs, Apify scraping, and Google APIs.",
+      "Built an event-driven AI automation workflow to convert resume PDFs into personalized job recommendations without manual search."
+      "Automated resume parsing and structuring using LLMs with deterministic schema normalization in JavaScript."
+      "Implemented primary role resolution and context propagation across the workflow for accurate job matching."
+      "Integrated real-time job acquisition from Naukri using Apify and programmatically normalized scraped job data.",
     tech: ["n8n", "JavaScript", "LLM APIs", "Apify", "Google Drive API", "Gmail API"],
     links: {
       live: "",
@@ -171,7 +199,11 @@ export const projects = [
     title: "AI Intrusion Detection System",
     subtitle: "Federated Learning IDPS",
     description:
-      "Real-time AI-powered IDPS using hybrid ML & Deep Learning for detecting zero-day cyber threats with Federated Learning for privacy-preserving training.",
+      "Built a real-time AI-powered IDPS using hybrid ML and Deep Learning to detect known, unknown, and zero-day cyber threats."
+      "Applied Federated Learning for privacy-preserving collaborative training across distributed nodes."
+      "Implemented Random Forest, XGBoost, LSTM, and Autoencoders with an ensemble strategy to reduce false positives."
+      "Developed an autonomous response pipeline for instant threat mitigation and dynamic firewall rule updates."
+      "Integrated Explainable AI techniques (SHAP, LIME) for transparent and auditable security decisions.",
     tech: ["Python", "TensorFlow", "Scikit-learn", "Federated Learning", "SHAP", "LIME"],
     links: {
       live: "",
@@ -182,6 +214,147 @@ export const projects = [
     period: "Ongoing",
     icon: "🛡️",
   },
+  {
+  id: 6,
+  title: "Carbon IQ",
+  subtitle: "AI-Powered Carbon Emission Tracker",
+  description:
+    "Developed a multilingual carbon reporting mobile application using Expo and React Native for real-time emission tracking."
+    "Implemented vendor-based data input system with industry-specific parameters for accurate carbon footprint calculation."
+    "Designed intelligent emission scoring and normalization logic to compare results with government standards."
+    "Built dynamic insights module highlighting overused resources and providing actionable sustainability tips."
+    "Enabled CSV export functionality and detailed analytics with visual charts for emission distribution and trends.",
+  tech: ["React Native", "Expo", "JavaScript", "i18n", "Data Visualization", "CSV Export"],
+  links: {
+    live: "https://drive.google.com/file/d/1OXa4h66cdnP-Os2Lz7PSScqKskfksDl8/view?usp=sharing",
+    github: "https://github.com/vk26kumar/Carbon-IQ",
+  },
+  color: "#0071CE",
+  featured: true,
+  period: "2026",
+  icon: "🌱",
+  },
+  {
+  id: 7,
+  title: "File Sharing System",
+  subtitle: "Secure File Transfer Platform",
+  description:
+    "Developed a secure file sharing system for uploading, storing, and sharing files via unique access links."
+    "Implemented backend using Node.js and Express with efficient file handling and RESTful APIs."
+    "Enabled file uploads with size validation and secure storage management on the server."
+    "Generated unique shareable links for controlled file access and easy distribution."
+    "Designed a simple and responsive frontend interface for seamless user interaction.",
+  tech: ["Node.js", "Express", "JavaScript", "HTML", "CSS", "Multer"],
+  links: {
+    live: "",
+    github: "https://github.com/vk26kumar/file-sharing-system",
+  },
+  color: "#4CAF50",
+  featured: false,
+  period: "Completed",
+  icon: "📁",
+ },
+ {
+  id: 8,
+  title: "Resume-Driven Job Automation",
+  subtitle: "AI Workflow with n8n",
+  description:
+    "Built an end-to-end AI automation workflow using n8n to convert resume PDFs into personalized job recommendations."
+    "Implemented LLM-based resume parsing with structured data extraction and deterministic normalization."
+    "Developed intelligent role detection logic to match users with relevant job opportunities."
+    "Integrated real-time job scraping from Naukri using Apify and processed job data programmatically."
+    "Automated email delivery of consolidated job recommendations using Gmail API.",
+  tech: ["n8n", "JavaScript", "LLM APIs", "Apify", "Google Drive API", "Gmail API"],
+  links: {
+    live: "",
+    github: "https://github.com/vk26kumar/resume-driven-job-automation-n8n",
+  },
+  color: "#6C63FF",
+  featured: true,
+  period: "2026",
+  icon: "🤖",
+  },
+  {
+  id: 9,
+  title: "About Renusagar",
+  subtitle: "Corporate Internship Project (Hindalco)",
+  description:
+    "Engineered and deployed the 'About Renusagar' web platform to establish the campus’s digital identity and online presence."
+    "Developed a responsive and user-friendly interface to showcase infrastructure, facilities, and organizational information."
+    "Collaborated in a corporate environment at Hindalco Industries (Aditya Birla Group) to deliver a production-ready solution."
+    "Strengthened professional skills including client communication, task ownership, and agile development practices."
+    "Successfully hosted the platform on Vercel ensuring accessibility and performance optimization.",
+  tech: ["React.js", "JavaScript", "HTML", "CSS", "Vercel"],
+  links: {
+    live: "https://about-renusgar-internship-h5rkp440c-vishals-projects-049043bb.vercel.app/",
+    github: "https://github.com/vk26kumar/About_Renusgar-INTERNSHIP",
+  },
+  color: "#009688",
+  featured: true,
+  period: "May 2025 - June 2025",
+  icon: "🏢",
+ }, 
+  {
+  id: 10,
+  title: "Unemployment Analysis",
+  subtitle: "Data Analysis & Visualization",
+  description:
+    "Performed in-depth analysis of unemployment trends using Python and real-world datasets."
+    "Cleaned and preprocessed raw data to ensure accuracy and consistency for analysis."
+    "Created insightful visualizations to identify patterns, seasonal trends, and regional variations."
+    "Used statistical techniques to interpret unemployment rates and economic indicators."
+    "Developed an interactive Google Colab notebook for reproducible analysis and experimentation.",
+  tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+  links: {
+    live: "https://colab.research.google.com/drive/10XIXX3fJvhEZdj8pzaTbeGnLrYSBQEhh?usp=sharing",
+    github: "https://github.com/vk26kumar/unemployment-analysis-using-python",
+  },
+  color: "#FF9800",
+  featured: false,
+  period: "2025",
+  icon: "📊",
+ },
+ {
+  id: 11,
+  title: "Email Spam Detection",
+  subtitle: "Machine Learning Classifier",
+  description:
+    "Developed a machine learning model to classify emails as spam or not spam using NLP techniques."
+    "Performed text preprocessing including tokenization, stopword removal, and vectorization."
+    "Trained and evaluated models such as Naive Bayes for efficient classification."
+    "Achieved high accuracy through feature extraction and model optimization."
+    "Implemented the solution in a Google Colab notebook for easy experimentation and deployment.",
+  tech: ["Python", "Scikit-learn", "NLP", "Pandas", "NumPy"],
+  links: {
+    live: "https://colab.research.google.com/drive/1xeBODBEmD5bOn8zs06l0Ut-jMH9kkHDO?usp=sharing",
+    github: "https://github.com/vk26kumar/email_spam_detection_with_machine_learning",
+  },
+  color: "#E91E63",
+  featured: false,
+  period: "2025",
+  icon: "📧",
+ },
+ {
+  id: 12,
+  title: "Car Price Prediction",
+  subtitle: "Regression Model",
+  description:
+    "Built a machine learning regression model to predict car prices based on various features."
+    "Performed data cleaning, feature engineering, and exploratory data analysis."
+    "Trained regression algorithms to estimate prices with improved accuracy."
+    "Evaluated model performance using metrics like R-squared and Mean Squared Error."
+    "Implemented the project in Google Colab for easy access and reproducibility.",
+  tech: ["Python", "Scikit-learn", "Pandas", "NumPy", "Regression"],
+  links: {
+    live: "https://colab.research.google.com/drive/1vSM5fzm1VLWGSStoMQtNkiKVUohhOpmh?usp=sharing",
+    github: "https://github.com/vk26kumar/car_price_predication_machine_learning",
+  },
+  color: "#3F51B5",
+  featured: false,
+  period: "2025",
+  icon: "🚗",
+ },
+
 ];
 
 export const skills = {
@@ -230,7 +403,7 @@ export const achievements = [
     event: "CSA Fest – TECHSRIJAN'24",
     icon: "🥉",
     color: "#00f5d4",
-    link: "#",
+    link: "https://drive.google.com/file/d/1XmDMkpbr7tmL44qfx4c5S2iEdBDaEBmh/view?usp=drive_link",
   },
   {
     id: 2,
@@ -238,7 +411,7 @@ export const achievements = [
     event: "Competed among 90+ teams",
     icon: "🏆",
     color: "#7c3aed",
-    link: "#",
+    link: "https://drive.google.com/file/d/1wCAzGUqhFQIq2AoxkhVC8hDUYLBl1tiG/view?usp=drive_link",
   },
   {
     id: 3,
@@ -246,7 +419,7 @@ export const achievements = [
     event: "ACE Civil Engineering Society",
     icon: "🥉",
     color: "#00d68f",
-    link: "#",
+    link: "https://drive.google.com/file/d/1iKxiZuWsc-drN-0QAr2Dvc_vpgDDlv2I/view?usp=drive_link",
   },
   {
     id: 4,
@@ -254,7 +427,7 @@ export const achievements = [
     event: "Microsoft Hackathon — Among 10,500+ teams",
     icon: "⚡",
     color: "#ffd60a",
-    link: "#",
+    link: "https://drive.google.com/file/d/1jEPPiJaMVXTIK2oie_pgLQiVPHb2lyqX/view?usp=drive_link",
   },
   {
     id: 5,
@@ -262,7 +435,7 @@ export const achievements = [
     event: "Walmart All India Hackathon",
     icon: "🔥",
     color: "#ff3366",
-    link: "#",
+    link: "https://drive.google.com/file/d/1sVrlKyl8Q8JHjp2ToS-5ipJiCrpa7c1k/view?usp=drive_link",
   },
   {
     id: 6,
@@ -270,7 +443,7 @@ export const achievements = [
     event: "Internal Smart India Hackathon (SIH'25), MMMUT",
     icon: "🎯",
     color: "#00f5d4",
-    link: "#",
+    link: "https://drive.google.com/file/d/1lArbjNNC6A_E4ZtNhRNGTYZh6d3T1b8m/view?usp=drive_link",
   },
 ];
 
@@ -280,20 +453,41 @@ export const certifications = [
     title: "IT Intern Certificate",
     issuer: "Hindalco Industries — Aditya Birla Group",
     date: "June 2025",
-    link: "#",
+    link: "https://drive.google.com/file/d/1UjFBFPp4kX1biT9tJScWsTKimtgX7wXW/view?usp=drive_link",
   },
   {
     id: 2,
     title: "Development Team Certificate",
     issuer: "MMMUT Reso Technical Society",
     date: "Jan 2026",
-    link: "#",
+    link: "https://drive.google.com/file/d/1TbK13LpBtARZWu1gFyq-LNN75A9ECMW4/view?usp=drive_link",
   },
   {
     id: 3,
     title: "Social Internship Certificate",
     issuer: "Save Child Beggar Foundation",
     date: "June 2025",
-    link: "#",
+    link: "https://drive.google.com/file/d/1tirGHbP7IH_7IJNeP6cKe9a0EtY00kkJ/view?usp=drive_link",
+  },
+    {
+    id: 4,
+    title: "AI Workshop Participation",
+    issuer: "Centre of Excellence – AI Lab, MMMUT (AISpark)",
+    date: "July 2025",
+    link: "https://drive.google.com/file/d/16qK8W2Ab_wrGWnvNywkonitLNhSMIbzX/view?usp=sharing",
+  },
+  {
+    id: 5,
+    title: "Graph Theory Programming Camp",
+    issuer: "AlgoUniversity",
+    date: "2025",
+    link: "https://drive.google.com/file/d/1l-ILXonV4ETYyJ3tMXvG0rIwtMbXw5Wl/view?usp=sharing",
+  },
+  {
+    id: 6,
+    title: "Drishyaa Career Counselling Event",
+    issuer: "The Social Engineers' Board, MMMUT",
+    date: "Nov 2023",
+    link: "https://drive.google.com/file/d/12xRjK_YTeXDzCeQYc2c4mFD1SRM2EImu/view?usp=drive_link",
   },
 ];
