@@ -95,7 +95,7 @@ export const DEFAULT_DATA = {
       id: 2, title: 'Dine Time', subtitle: 'Restaurant Reservation Mobile App',
       description: 'Developed and published a production-ready booking app with Expo & Firebase. Implemented multi-mode authentication (email, guest login, Google) with real-time data sync. Embedded Google Maps API for live location-based restaurant discovery and navigation. Released APK using EAS Build and facilitated public beta testing.',
       tech: 'React Native, Expo, Firebase, Google Maps API, Payment Gateway',
-      liveLink: 'https://drive.google.com/file/d/1GKMG9-JWUVZm-tp3u9P3uh0qjEjt1q-E/view', githubLink: 'https://github.com/vk26kumar/Dine_Time',
+      liveLink: 'https://drive.google.com/file/d/1JjEdReBesn06uaraLk9RQe3hJHexakcl/view?usp=sharing', githubLink: 'https://github.com/Tarkeshvar/DineTime',
       color: '#7c3aed', featured: true, period: 'May 2025', icon: '🍽️',
     },
     {
@@ -127,11 +127,11 @@ export const DEFAULT_DATA = {
       color: '#6C63FF', featured: true, period: '2026', icon: '⚡',
     },
     {
-      id: 5, title: 'AI Intrusion Detection System', subtitle: 'Federated Learning IDPS',
+      id: 5, title: 'Adaptive AI-Driven Intrusion Detection & Protection System with Federated Learning', subtitle: 'Federated Learning IDPS',
       description: 'Built a real-time AI-powered IDPS using hybrid ML and Deep Learning to detect known, unknown, and zero-day cyber threats. Applied Federated Learning for privacy-preserving collaborative training. Implemented Random Forest, XGBoost, LSTM, and Autoencoders with ensemble strategy. Integrated Explainable AI (SHAP, LIME) for transparent security decisions.',
-      tech: 'Python, TensorFlow, Scikit-learn, Federated Learning, SHAP, LIME',
-      liveLink: '', githubLink: '',
-      color: '#ff3366', featured: false, period: 'Ongoing', icon: '🛡️',
+      tech: 'Python, Scikit-learn, TensorFlow, Federated Learning (Flower/FedML), SHAP, LIME, Scapy, NumPy, Pandas, Linux',
+      liveLink: '', githubLink: 'https://github.com/vk26kumar/Adaptive-AI-Driven-Intrusion-Detection-Protection-System',
+      color: '#ff3366', featured: true, period: 'Ongoing', icon: '🛡️',
     },
     {
       id: 7, title: 'File Sharing System', subtitle: 'Secure File Transfer Platform',
@@ -160,6 +160,13 @@ export const DEFAULT_DATA = {
       tech: 'Python, Scikit-learn, Pandas, NumPy, Regression',
       liveLink: 'https://colab.research.google.com/drive/1vSM5fzm1VLWGSStoMQtNkiKVUohhOpmh?usp=sharing', githubLink: 'https://github.com/vk26kumar/car_price_predication_machine_learning',
       color: '#3F51B5', featured: false, period: '2025', icon: '🚗',
+    },
+        {
+      id: 13, title: 'AI Social Media Automation System', subtitle: 'Using n8n and LLMs',
+      description: 'Architected a scalable AI-driven content automation pipeline integrating LLM-based captioning and AI image generation.Designed an event-driven workflow with human-in-the-loop approval (Telegram bot) improving content quality and control.',
+      tech: 'n8n, JavaScript, OpenAI APIs, Telegram Bot API, Google Sheets API, Cloudinary, Meta Graph API',
+      liveLink: '#', githubLink: 'https://github.com/vk26kumar/Social-Media-Manager-Automation',
+      color: '#3F51B5', featured: true, period: '2026', icon: '🤖',
     },
   ],
   skills: {
