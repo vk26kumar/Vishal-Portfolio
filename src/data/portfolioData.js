@@ -177,25 +177,6 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Resume-Driven AI Job Automation",
-    subtitle: "n8n Automation Workflow",
-    description:
-      "Built an event-driven AI automation workflow to convert resume PDFs into personalized job recommendations without manual search."
-      "Automated resume parsing and structuring using LLMs with deterministic schema normalization in JavaScript."
-      "Implemented primary role resolution and context propagation across the workflow for accurate job matching."
-      "Integrated real-time job acquisition from Naukri using Apify and programmatically normalized scraped job data.",
-    tech: ["n8n", "JavaScript", "LLM APIs", "Apify", "Google Drive API", "Gmail API"],
-    links: {
-      live: "",
-      github: "https://github.com/vk26kumar/resume-driven-job-automation-n8n",
-    },
-    color: "#ffd60a",
-    featured: false,
-    period: "Jan 2025",
-    icon: "⚡",
-  },
-  {
-    id: 5,
     title: "'Adaptive AI-Driven Intrusion Detection & Protection System with Federated Learning",
     subtitle: "Federated Learning IDPS",
     description:
@@ -209,12 +190,12 @@ export const projects = [
       github: "https://github.com/vk26kumar/Adaptive-AI-Driven-Intrusion-Detection-Protection-System",
     },
     color: "#ff3366",
-    featured: ture,
-    period: "Ongoing",
+    featured: true,
+    period: "March 2026",
     icon: "🛡️",
   },
   {
-  id: 6,
+  id: 5,
   title: "Carbon IQ",
   subtitle: "AI-Powered Carbon Emission Tracker",
   description:
@@ -234,7 +215,7 @@ export const projects = [
   icon: "🌱",
   },
   {
-  id: 7,
+  id: 6,
   title: "File Sharing System",
   subtitle: "Secure File Transfer Platform",
   description:
@@ -254,7 +235,7 @@ export const projects = [
   icon: "📁",
  },
  {
-  id: 8,
+  id: 7,
   title: "Resume-Driven Job Automation",
   subtitle: "AI Workflow with n8n",
   description:
@@ -274,7 +255,7 @@ export const projects = [
   icon: "🤖",
   },
   {
-  id: 9,
+  id: 8,
   title: "About Renusagar",
   subtitle: "Corporate Internship Project (Hindalco)",
   description:
@@ -294,7 +275,7 @@ export const projects = [
   icon: "🏢",
  }, 
   {
-  id: 10,
+  id: 9,
   title: "Unemployment Analysis",
   subtitle: "Data Analysis & Visualization",
   description:
@@ -314,7 +295,7 @@ export const projects = [
   icon: "📊",
  },
  {
-  id: 11,
+  id: 10,
   title: "Email Spam Detection",
   subtitle: "Machine Learning Classifier",
   description:
@@ -334,7 +315,7 @@ export const projects = [
   icon: "📧",
  },
  {
-  id: 12,
+  id: 11,
   title: "Car Price Prediction",
   subtitle: "Regression Model",
   description:
@@ -354,7 +335,7 @@ export const projects = [
   icon: "🚗",
  },
   {
-  id: 13,
+  id: 12,
   title: "AI Social Media Automation System",
   subtitle: "Using n8n and LLMs",
   description:
@@ -364,6 +345,7 @@ export const projects = [
       "Built a dynamic content scheduling system using Google Sheets as a CMS with real-time filtering and execution.",
   tech: ["Python", "Scikit-learn", "Pandas", "NumPy", "Regression"],
   links: {
+    live: "",
     github: "https://github.com/vk26kumar/Social-Media-Manager-Automation",
   },
   color: "#3F51B5",
@@ -371,7 +353,6 @@ export const projects = [
   period: "2026",
   icon: "🤖",
  },
-
 ];
 
 export const skills = {
