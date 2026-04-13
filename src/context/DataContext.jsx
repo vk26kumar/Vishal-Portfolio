@@ -130,7 +130,7 @@ export const DEFAULT_DATA = {
       id: 5, title: 'Adaptive AI-Driven Intrusion Detection & Protection System with Federated Learning', subtitle: 'Federated Learning IDPS',
       description: '•	Built a real-time AI-powered IDS using hybrid Autoencoder (Deep Learning) + XGBoost (Machine Learning) ensemble achieving 99.0% accuracy on CIC-IDS2017 benchmark dataset with 99.7% AUC-ROC.',
       tech: 'Python, Scikit-learn, TensorFlow, Federated Learning (Flower/FedML), SHAP, LIME, Scapy, NumPy, Pandas, Linux',
-      liveLink: ' https://adaptive-ai-driven-intrusion-detection-protection-system.streamlit.app', githubLink: 'https://github.com/vk26kumar/Adaptive-AI-Driven-Intrusion-Detection-Protection-System',
+      liveLink: 'https://adaptive-ai-driven-intrusion-detection-protection-system.streamlit.app', githubLink: 'https://github.com/vk26kumar/Adaptive-AI-Driven-Intrusion-Detection-Protection-System',
       color: '#ff3366', featured: true, period: 'Ongoing', icon: '🛡️',
     },
     {
