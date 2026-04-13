@@ -36,7 +36,7 @@ export const education = [
     degree: "B.Tech — Computer Science & Engineering",
     institution: "MMMUT, Gorakhpur",
     period: "2023 — Ongoing",
-    score: "9.27 / 10.0",
+    score: "9.28 / 10.0",
     type: "cgpa",
     highlight: true,
   },
@@ -196,21 +196,20 @@ export const projects = [
   },
   {
     id: 5,
-    title: "AI Intrusion Detection System",
+    title: "'Adaptive AI-Driven Intrusion Detection & Protection System with Federated Learning",
     subtitle: "Federated Learning IDPS",
     description:
-      "Built a real-time AI-powered IDPS using hybrid ML and Deep Learning to detect known, unknown, and zero-day cyber threats."
-      "Applied Federated Learning for privacy-preserving collaborative training across distributed nodes."
-      "Implemented Random Forest, XGBoost, LSTM, and Autoencoders with an ensemble strategy to reduce false positives."
-      "Developed an autonomous response pipeline for instant threat mitigation and dynamic firewall rule updates."
-      "Integrated Explainable AI techniques (SHAP, LIME) for transparent and auditable security decisions.",
+      "Built a real-time AI-powered IDS using hybrid Autoencoder (Deep Learning) + XGBoost (Machine Learning) ensemble achieving 99.0% accuracy on CIC-IDS2017 benchmark dataset with 99.7% AUC-ROC."
+      "Implemented live packet sniffing using Scapy with real-time 30-feature extraction, classifying network traffic as ATTACK or NORMAL at 12.6 ms average latency per packet."
+      "Developed an Attack Simulator detecting DDoS, BruteForce, SQL Injection and Port Scan."
+      "Deployed a Streamlit real-time dashboard with live packet feed, threat alerts, confusion matrix, traffic timeline, and attack type breakdown with auto-refresh every second.",
     tech: ["Python", "TensorFlow", "Scikit-learn", "Federated Learning", "SHAP", "LIME"],
     links: {
-      live: "",
-      github: "",
+      live: "https://adaptive-ai-driven-intrusion-detection-protection-system.streamlit.app",
+      github: "https://github.com/vk26kumar/Adaptive-AI-Driven-Intrusion-Detection-Protection-System",
     },
     color: "#ff3366",
-    featured: false,
+    featured: ture,
     period: "Ongoing",
     icon: "🛡️",
   },
@@ -353,6 +352,24 @@ export const projects = [
   featured: false,
   period: "2025",
   icon: "🚗",
+ },
+  {
+  id: 13,
+  title: "AI Social Media Automation System",
+  subtitle: "Using n8n and LLMs",
+  description:
+      "Architected a scalable AI-driven content automation pipeline integrating LLM-based captioning and AI image generation."
+      "Designed an event-driven workflow with human-in-the-loop approval (Telegram bot) improving content quality and control."
+      "Automated end-to-end Instagram publishing pipeline, reducing manual effort by ~80% via API integrations."
+      "Built a dynamic content scheduling system using Google Sheets as a CMS with real-time filtering and execution.",
+  tech: ["Python", "Scikit-learn", "Pandas", "NumPy", "Regression"],
+  links: {
+    github: "https://github.com/vk26kumar/Social-Media-Manager-Automation",
+  },
+  color: "#3F51B5",
+  featured: true,
+  period: "2026",
+  icon: "🤖",
  },
 
 ];
