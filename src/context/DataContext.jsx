@@ -9,7 +9,7 @@ export const DEFAULT_DATA = {
     phone: '+91 7800982247',
     location: 'Gorakhpur, Uttar Pradesh',
     bio: 'Engineering intelligent systems at the intersection of web, mobile, and AI. I build scalable full-stack applications, ML-powered tools, and automation workflows that solve real problems.',
-    resumeLink: 'https://drive.google.com/file/d/15uOcrrv9iTh4miC47VIfdgC8rxIg5x0p/view?usp=sharing',
+    resumeLink: 'https://drive.google.com/file/d/1KLeIi8zzWBBjdnpIw42WKz8nMKb6-agr/view?usp=sharing',
     taglines: [
       'Full Stack MERN Developer',
       'React Native Developer',
