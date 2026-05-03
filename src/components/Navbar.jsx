@@ -64,7 +64,7 @@ export default function Navbar() {
 
         {/* Resume CTA */}
         <a
-          href="https://drive.google.com/file/d/15uOcrrv9iTh4miC47VIfdgC8rxIg5x0p/view?usp=sharing"
+          href="https://drive.google.com/file/d/1KLeIi8zzWBBjdnpIw42WKz8nMKb6-agr/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:flex items-center gap-2 font-display text-xs text-[#00f5d4] border border-[#00f5d4]/30 px-4 py-2 hover:bg-[#00f5d4]/10 transition-all duration-200 hover:border-[#00f5d4]"
