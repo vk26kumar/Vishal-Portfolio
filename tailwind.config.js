@@ -3,49 +3,35 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
-      fontFamily: {
-        display: ['Space Mono', 'monospace'],
-        body: ['DM Sans', 'sans-serif'],
-        accent: ['Bebas Neue', 'cursive'],
-      },
       colors: {
-        cyber: {
-          bg: '#050505',
-          card: '#0d0d0d',
-          border: '#1a1a1a',
-          cyan: '#00f5d4',
-          emerald: '#00d68f',
-          purple: '#7c3aed',
-          red: '#ff3366',
-          yellow: '#ffd60a',
-        },
+        bg: '#0a0b0d',
+        surface: '#0f1115',
+        elevated: '#14171c',
+        line: '#1d2127',
+        'line-strong': '#2b3139',
+        txt: '#e9ebee',
+        muted: '#a2a8b2',
+        faint: '#7d848e',
+        accent: '#5fd3bd',
+        'accent-dim': '#3f9e8d',
       },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'scan': 'scan 3s linear infinite',
-        'glitch': 'glitch 1s step-start infinite',
+      fontFamily: {
+        // Primary families
+        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        // Legacy aliases kept so the /admin CMS stays visually coherent
+        display: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
+        accent: ['Inter', 'system-ui', 'sans-serif'],
       },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        glow: {
-          '0%': { textShadow: '0 0 10px #00f5d4, 0 0 20px #00f5d4' },
-          '100%': { textShadow: '0 0 20px #00f5d4, 0 0 40px #00f5d4, 0 0 80px #00f5d4' },
-        },
-        scan: {
-          '0%': { transform: 'translateY(-100%)' },
-          '100%': { transform: 'translateY(100vh)' },
-        },
-        glitch: {
-          '0%, 100%': { clipPath: 'inset(0 0 0 0)' },
-          '20%': { clipPath: 'inset(20% 0 60% 0)', transform: 'translate(-4px)' },
-          '40%': { clipPath: 'inset(60% 0 20% 0)', transform: 'translate(4px)' },
-          '60%': { clipPath: 'inset(40% 0 40% 0)', transform: 'translate(-2px)' },
-          '80%': { clipPath: 'inset(10% 0 80% 0)', transform: 'translate(2px)' },
-        },
+      maxWidth: {
+        page: '1200px',
+      },
+      borderRadius: {
+        card: '12px',
+      },
+      transitionTimingFunction: {
+        smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
     },
   },

@@ -12,7 +12,7 @@ function Field({ label, value, onChange, type = 'text', placeholder = '' }) {
     <div>
       <label className="font-display text-[10px] tracking-widest text-gray-500 block mb-1">{label}</label>
       <input type={type} value={value ?? ''} onChange={e => onChange(e.target.value)} placeholder={placeholder}
-        className="w-full bg-[#0a0a0a] border border-[#222] text-white text-xs px-3 py-2.5 font-body focus:outline-none focus:border-[#00f5d4]/50 transition-colors placeholder-gray-700 rounded-sm" />
+        className="w-full bg-[#0b0d10] border border-[#1d2127] text-white text-xs px-3 py-2.5 font-body focus:outline-none focus:border-[#5fd3bd]/50 transition-colors placeholder-gray-700 rounded-sm" />
     </div>
   )
 }
@@ -22,16 +22,16 @@ function Textarea({ label, value, onChange, rows = 3, placeholder = '' }) {
     <div>
       <label className="font-display text-[10px] tracking-widest text-gray-500 block mb-1">{label}</label>
       <textarea value={value ?? ''} onChange={e => onChange(e.target.value)} rows={rows} placeholder={placeholder}
-        className="w-full bg-[#0a0a0a] border border-[#222] text-white text-xs px-3 py-2.5 font-body focus:outline-none focus:border-[#00f5d4]/50 transition-colors placeholder-gray-700 resize-none rounded-sm" />
+        className="w-full bg-[#0b0d10] border border-[#1d2127] text-white text-xs px-3 py-2.5 font-body focus:outline-none focus:border-[#5fd3bd]/50 transition-colors placeholder-gray-700 resize-none rounded-sm" />
     </div>
   )
 }
 
-function Card({ title, accent = '#00f5d4', children, onRemove, collapsible = true }) {
+function Card({ title, accent = '#5fd3bd', children, onRemove, collapsible = true }) {
   const [open, setOpen] = useState(true)
   return (
-    <div className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-sm overflow-hidden">
-      <div className="flex items-center justify-between px-5 py-3 border-b border-[#1a1a1a] cursor-pointer select-none"
+    <div className="bg-[#0f1115] border border-[#1d2127] rounded-sm overflow-hidden">
+      <div className="flex items-center justify-between px-5 py-3 border-b border-[#1d2127] cursor-pointer select-none"
         onClick={() => collapsible && setOpen(o => !o)}>
         <h3 className="font-display text-xs tracking-widest" style={{ color: accent }}>{title}</h3>
         <div className="flex items-center gap-3">
@@ -56,7 +56,7 @@ function Card({ title, accent = '#00f5d4', children, onRemove, collapsible = tru
   )
 }
 
-function AddBtn({ label, color = '#00f5d4', onClick }) {
+function AddBtn({ label, color = '#5fd3bd', onClick }) {
   return (
     <button onClick={onClick}
       className="flex items-center gap-2 font-display text-[10px] tracking-widest px-4 py-2 transition-colors border"
@@ -72,7 +72,7 @@ function ToggleBtn({ active, onToggle, labelOn = 'YES', labelOff = 'NO' }) {
   return (
     <button onClick={onToggle}
       className={`flex items-center gap-2 px-4 py-2 border font-display text-[10px] tracking-widest transition-colors ${
-        active ? 'border-[#00f5d4] text-[#00f5d4] bg-[#00f5d4]/10' : 'border-[#333] text-gray-500'
+        active ? 'border-[#5fd3bd] text-[#5fd3bd] bg-[#5fd3bd]/10' : 'border-[#2b3139] text-gray-500'
       }`}>
       {active ? <Check size={10} /> : <X size={10} />}
       {active ? labelOn : labelOff}
@@ -144,25 +144,25 @@ export default function Admin() {
   // ═══════════════════════════════════════════════════════════════
   if (!authed) {
     return (
-      <div className="min-h-screen bg-[#050505] flex items-center justify-center px-6">
+      <div className="min-h-screen bg-[#0a0b0d] flex items-center justify-center px-6">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-sm">
-          <div className="bg-[#0d0d0d] border border-[#1a1a1a] p-10">
+          <div className="bg-[#0f1115] border border-[#1d2127] p-10">
             <div className="text-center mb-8">
-              <div className="font-display text-xs text-[#00f5d4] tracking-widest mb-2">// ADMIN ACCESS</div>
+              <div className="font-display text-xs text-[#5fd3bd] tracking-widest mb-2">// ADMIN ACCESS</div>
               <h1 className="font-accent text-4xl text-white">PORTFOLIO CMS</h1>
               <p className="font-display text-[10px] text-gray-600 mt-2 tracking-widest">Enter password to continue</p>
             </div>
             <div className="space-y-4">
               <input type="password" placeholder="Password" value={password}
                 onChange={e => setPassword(e.target.value)} onKeyDown={e => e.key === 'Enter' && login()}
-                className={`w-full bg-[#0a0a0a] border text-white text-sm px-4 py-3 font-display focus:outline-none transition-colors text-center tracking-widest ${
-                  wrongPw ? 'border-[#ff3366]' : 'border-[#222] focus:border-[#00f5d4]/50'
+                className={`w-full bg-[#0b0d10] border text-white text-sm px-4 py-3 font-display focus:outline-none transition-colors text-center tracking-widest ${
+                  wrongPw ? 'border-[#ff3366]' : 'border-[#1d2127] focus:border-[#5fd3bd]/50'
                 }`} />
               {wrongPw && (
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                   className="font-display text-[10px] text-[#ff3366] text-center tracking-widest">ACCESS DENIED</motion.p>
               )}
-              <button onClick={login} className="w-full bg-[#00f5d4] text-black font-display text-xs tracking-widest py-3 hover:bg-[#00d4b8] transition-colors">
+              <button onClick={login} className="w-full bg-[#5fd3bd] text-black font-display text-xs tracking-widest py-3 hover:bg-[#74e0cb] transition-colors">
                 AUTHENTICATE
               </button>
               <button onClick={() => navigate('/')} className="w-full text-gray-600 font-display text-[10px] tracking-widest hover:text-gray-400 transition-colors">
@@ -181,12 +181,13 @@ export default function Admin() {
   // DASHBOARD
   // ═══════════════════════════════════════════════════════════════
   return (
-    <div className="min-h-screen bg-[#050505]">
+    <div className="min-h-screen bg-[#0a0b0d]">
       {/* Top bar */}
-      <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-xl border-b border-[#1a1a1a] px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <span className="font-display text-xs text-[#00f5d4] tracking-widest">{'>'} PORTFOLIO CMS</span>
-          <span className="w-2 h-2 rounded-full bg-[#00f5d4] animate-pulse shadow-[0_0_8px_#00f5d4]" />
+      <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-xl border-b border-[#1d2127] py-4">
+        <div className="page-container flex items-center justify-between">
+          <div className="flex items-center gap-4">
+          <span className="font-display text-xs text-[#5fd3bd] tracking-widest">{'>'} PORTFOLIO CMS</span>
+          <span className="w-2 h-2 rounded-full bg-[#5fd3bd] shadow-[0_0_8px_#5fd3bd]" />
         </div>
         <div className="flex items-center gap-3">
           <a href="/" target="_blank" rel="noopener noreferrer"
@@ -194,25 +195,26 @@ export default function Admin() {
             <Eye size={12} /> PREVIEW
           </a>
           <button onClick={handleSave}
-            className="flex items-center gap-2 bg-[#00f5d4] text-black font-display text-xs tracking-widest px-5 py-2 hover:bg-[#00d4b8] transition-colors shadow-[0_0_20px_rgba(0,245,212,0.3)]">
+            className="flex items-center gap-2 bg-[#5fd3bd] text-black font-display text-xs tracking-widest px-5 py-2 hover:bg-[#74e0cb] transition-colors shadow-[0_0_20px_rgba(0,245,212,0.3)]">
             <Save size={12} /> SAVE ALL
           </button>
           <button onClick={() => { setAuthed(false); navigate('/') }} className="text-gray-600 hover:text-[#ff3366] transition-colors p-1">
             <LogOut size={16} />
           </button>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-10">
+      <div className="page-container py-10">
         {/* Live stats bar */}
         <div className="grid grid-cols-4 gap-3 mb-8">
           {[
-            { label: 'PROJECTS', value: (d.projects || []).length, color: '#00f5d4' },
+            { label: 'PROJECTS', value: (d.projects || []).length, color: '#5fd3bd' },
             { label: 'EXPERIENCE', value: (d.experience || []).length, color: '#7c3aed' },
             { label: 'ACHIEVEMENTS', value: (d.achievements || []).length, color: '#ffd60a' },
             { label: 'CERTIFICATIONS', value: (d.certifications || []).length, color: '#ff3366' },
           ].map(s => (
-            <div key={s.label} className="bg-[#0d0d0d] border border-[#1a1a1a] p-4 text-center">
+            <div key={s.label} className="bg-[#0f1115] border border-[#1d2127] p-4 text-center">
               <div className="font-accent text-2xl" style={{ color: s.color, textShadow: `0 0 15px ${s.color}` }}>{s.value}</div>
               <div className="font-display text-[9px] tracking-widest text-gray-600 mt-1">{s.label}</div>
             </div>
@@ -224,7 +226,7 @@ export default function Admin() {
           {tabs.map(tab => (
             <button key={tab.id} onClick={() => setActiveTab(tab.id)}
               className={`font-display text-[10px] tracking-widest px-4 py-2 transition-all duration-200 ${
-                activeTab === tab.id ? 'bg-[#00f5d4] text-black' : 'border border-[#1a1a1a] text-gray-500 hover:border-[#333] hover:text-gray-300'
+                activeTab === tab.id ? 'bg-[#5fd3bd] text-black' : 'border border-[#1d2127] text-gray-500 hover:border-[#2b3139] hover:text-gray-300'
               }`}>
               {tab.label.toUpperCase()}
             </button>
@@ -251,13 +253,13 @@ export default function Admin() {
                   </div>
                 </Card>
 
-                <Card title="ABOUT ME — SHORT BIO (shown in hero)" collapsible={false}>
+                <Card title="ABOUT ME - SHORT BIO (shown in hero)" collapsible={false}>
                   <Textarea label="BIO" value={d.personal?.bio} rows={3}
                     onChange={v => set('personal', 'bio', v)}
                     placeholder="Short bio shown on the hero section..." />
                 </Card>
 
-                <Card title="ABOUT ME — DETAILED TEXT (shown in About section)" collapsible={false}>
+                <Card title="ABOUT ME - DETAILED TEXT (shown in About section)" collapsible={false}>
                   <Textarea label="ABOUT LONG (paragraph shown in About section)" value={d.personal?.aboutLong} rows={5}
                     onChange={v => set('personal', 'aboutLong', v)}
                     placeholder="Full paragraph about yourself shown in the About section..." />
@@ -278,19 +280,19 @@ export default function Admin() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between mb-2">
                   <p className="font-display text-[10px] text-gray-500 tracking-widest">{(d.education || []).length} ENTRIES</p>
-                  <AddBtn label="ADD EDUCATION" color="#00f5d4" onClick={() => addItem('education', {
+                  <AddBtn label="ADD EDUCATION" color="#5fd3bd" onClick={() => addItem('education', {
                     id: Date.now(), degree: 'New Degree', institution: 'Institution Name',
                     period: '2025', score: '0.00', type: 'cgpa', highlight: false,
                   })} />
                 </div>
 
                 {(d.education || []).map((edu, i) => (
-                  <Card key={edu.id} title={`EDUCATION ${i + 1}: ${edu.degree}`} accent="#00f5d4"
+                  <Card key={edu.id} title={`EDUCATION ${i + 1}: ${edu.degree}`} accent="#5fd3bd"
                     onRemove={() => removeItem('education', edu.id)}>
                     <div className="grid md:grid-cols-2 gap-4 mb-4">
                       <Field label="DEGREE / COURSE" value={edu.degree} onChange={v => updItem('education', edu.id, 'degree', v)} />
                       <Field label="INSTITUTION" value={edu.institution} onChange={v => updItem('education', edu.id, 'institution', v)} />
-                      <Field label="PERIOD (e.g. 2023 — Ongoing)" value={edu.period} onChange={v => updItem('education', edu.id, 'period', v)} />
+                      <Field label="PERIOD (e.g. 2023 - Ongoing)" value={edu.period} onChange={v => updItem('education', edu.id, 'period', v)} />
                       <Field label="SCORE / GRADE" value={edu.score} onChange={v => updItem('education', edu.id, 'score', v)} placeholder="9.27 / 10.0 or 86.6%" />
                       <div>
                         <label className="font-display text-[10px] tracking-widest text-gray-500 block mb-1">SCORE TYPE</label>
@@ -298,7 +300,7 @@ export default function Admin() {
                           {['cgpa', 'percentage'].map(t => (
                             <button key={t} onClick={() => updItem('education', edu.id, 'type', t)}
                               className={`px-3 py-1.5 font-display text-[10px] tracking-widest border transition-colors ${
-                                edu.type === t ? 'border-[#00f5d4] text-[#00f5d4] bg-[#00f5d4]/10' : 'border-[#333] text-gray-500'
+                                edu.type === t ? 'border-[#5fd3bd] text-[#5fd3bd] bg-[#5fd3bd]/10' : 'border-[#2b3139] text-gray-500'
                               }`}>
                               {t.toUpperCase()}
                             </button>
@@ -326,7 +328,7 @@ export default function Admin() {
                 </div>
 
                 {(d.social || []).map((s, i) => (
-                  <div key={s.id} className="bg-[#0d0d0d] border border-[#1a1a1a] p-4 flex items-center gap-3">
+                  <div key={s.id} className="bg-[#0f1115] border border-[#1d2127] p-4 flex items-center gap-3">
                     <GripVertical size={14} className="text-gray-700 flex-shrink-0" />
                     <div className="grid grid-cols-2 gap-3 flex-1">
                       <Field label="LABEL (shown to visitors)" value={s.label}
@@ -342,8 +344,8 @@ export default function Admin() {
                 ))}
 
                 {/* Add new social */}
-                <div className="bg-[#0d0d0d] border border-dashed border-[#00f5d4]/20 p-5 rounded-sm">
-                  <p className="font-display text-[10px] text-[#00f5d4]/60 tracking-widest mb-4">ADD NEW SOCIAL LINK</p>
+                <div className="bg-[#0f1115] border border-dashed border-[#5fd3bd]/20 p-5 rounded-sm">
+                  <p className="font-display text-[10px] text-[#5fd3bd]/60 tracking-widest mb-4">ADD NEW SOCIAL LINK</p>
                   <div className="grid grid-cols-2 gap-3 mb-3">
                     <Field label="LABEL" value={newSocialLabel} onChange={setNewSocialLabel} placeholder="GitHub, LinkedIn, Portfolio..." />
                     <Field label="URL" value={newSocialHref} onChange={setNewSocialHref} placeholder="https://..." />
@@ -353,7 +355,7 @@ export default function Admin() {
                     addItem('social', { id: Date.now(), label: newSocialLabel.trim(), href: newSocialHref.trim() })
                     setNewSocialLabel(''); setNewSocialHref('')
                     toast.success(`Added ${newSocialLabel}!`)
-                  }} className="flex items-center gap-2 bg-[#00f5d4]/10 border border-[#00f5d4]/30 text-[#00f5d4] font-display text-[10px] tracking-widest px-4 py-2 hover:bg-[#00f5d4]/20 transition-colors">
+                  }} className="flex items-center gap-2 bg-[#5fd3bd]/10 border border-[#5fd3bd]/30 text-[#5fd3bd] font-display text-[10px] tracking-widest px-4 py-2 hover:bg-[#5fd3bd]/20 transition-colors">
                     <Plus size={11} /> ADD LINK
                   </button>
                 </div>
@@ -368,7 +370,7 @@ export default function Admin() {
                 <div className="flex justify-end mb-2">
                   <AddBtn label="ADD EXPERIENCE" color="#7c3aed" onClick={() => addItem('experience', {
                     id: Date.now(), role: 'New Role', company: 'Company Name',
-                    period: '2025', type: 'Industry', color: '#7c3aed',
+                    period: '2026', type: 'Industry', mode: 'Remote', certLink: '',
                     points: 'Key responsibility 1.\nKey responsibility 2.',
                   })} />
                 </div>
@@ -379,9 +381,12 @@ export default function Admin() {
                     <div className="grid md:grid-cols-2 gap-4 mb-4">
                       <Field label="ROLE / POSITION" value={exp.role} onChange={v => updItem('experience', exp.id, 'role', v)} />
                       <Field label="COMPANY / ORGANIZATION" value={exp.company} onChange={v => updItem('experience', exp.id, 'company', v)} />
-                      <Field label="PERIOD" value={exp.period} onChange={v => updItem('experience', exp.id, 'period', v)} placeholder="May 2025 — June 2025" />
+                      <Field label="PERIOD" value={exp.period} onChange={v => updItem('experience', exp.id, 'period', v)} placeholder="May 2025 - June 2025" />
                       <Field label="TYPE" value={exp.type} onChange={v => updItem('experience', exp.id, 'type', v)} placeholder="Industry / NGO / Tech Society" />
-                      <Field label="ACCENT COLOR" value={exp.color} onChange={v => updItem('experience', exp.id, 'color', v)} placeholder="#00f5d4" />
+                      <Field label="MODE / LOCATION" value={exp.mode} onChange={v => updItem('experience', exp.id, 'mode', v)} placeholder="Remote / On-site / Gorakhpur" />
+                      <div className="md:col-span-2">
+                        <Field label="CERTIFICATE LINK (optional)" value={exp.certLink} onChange={v => updItem('experience', exp.id, 'certLink', v)} placeholder="https://drive.google.com/..." />
+                      </div>
                     </div>
                     <Textarea label="BULLET POINTS (one per line)" value={exp.points} rows={4}
                       onChange={v => updItem('experience', exp.id, 'points', v)}
@@ -398,11 +403,11 @@ export default function Admin() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between mb-2">
                   <p className="font-display text-[10px] text-gray-500 tracking-widest">{(d.projects || []).length} PROJECTS</p>
-                  <AddBtn label="ADD PROJECT" color="#00f5d4" onClick={() => addItem('projects', {
+                  <AddBtn label="ADD PROJECT" color="#5fd3bd" onClick={() => addItem('projects', {
                     id: Date.now(), title: 'New Project', subtitle: 'Short tagline',
                     description: 'Project description here.', tech: 'React.js, Node.js',
-                    liveLink: '', githubLink: '', color: '#00f5d4',
-                    featured: false, period: '2025', icon: '🚀',
+                    liveLink: '', githubLink: '',
+                    featured: false, period: '2025', 
                   })} />
                 </div>
 
@@ -413,8 +418,6 @@ export default function Admin() {
                       <Field label="TITLE" value={p.title} onChange={v => updItem('projects', p.id, 'title', v)} />
                       <Field label="SUBTITLE" value={p.subtitle} onChange={v => updItem('projects', p.id, 'subtitle', v)} />
                       <Field label="PERIOD" value={p.period} onChange={v => updItem('projects', p.id, 'period', v)} />
-                      <Field label="ICON (emoji)" value={p.icon} onChange={v => updItem('projects', p.id, 'icon', v)} />
-                      <Field label="ACCENT COLOR" value={p.color} onChange={v => updItem('projects', p.id, 'color', v)} placeholder="#00f5d4" />
                       <div>
                         <label className="font-display text-[10px] tracking-widest text-gray-500 block mb-1">FEATURED BADGE</label>
                         <ToggleBtn active={p.featured} labelOn="FEATURED" labelOff="NOT FEATURED"
@@ -438,12 +441,12 @@ export default function Admin() {
             {activeTab === 'skills' && (
               <div className="space-y-6">
                 {/* Skill categories */}
-                <div className="bg-[#0d0d0d] border border-[#1a1a1a] p-5 rounded-sm">
-                  <div className="flex items-center justify-between mb-5 pb-3 border-b border-[#1a1a1a]">
+                <div className="bg-[#0f1115] border border-[#1d2127] p-5 rounded-sm">
+                  <div className="flex items-center justify-between mb-5 pb-3 border-b border-[#1d2127]">
                     <h3 className="font-display text-xs text-[#ffd60a] tracking-widest">SKILL CATEGORIES & BARS</h3>
                     <div className="flex items-center gap-3">
                       <input value={newSkillCat} onChange={e => setNewSkillCat(e.target.value)} placeholder="New category..."
-                        className="bg-[#0a0a0a] border border-[#222] text-white text-xs px-3 py-1.5 font-body focus:outline-none focus:border-[#ffd60a]/50 w-36 placeholder-gray-700" />
+                        className="bg-[#0b0d10] border border-[#1d2127] text-white text-xs px-3 py-1.5 font-body focus:outline-none focus:border-[#ffd60a]/50 w-36 placeholder-gray-700" />
                       <button onClick={() => {
                         if (!newSkillCat.trim()) return
                         if ((d.skills || {})[newSkillCat.trim()]) { toast.error('Category already exists.'); return }
@@ -458,7 +461,7 @@ export default function Admin() {
 
                   <div className="space-y-6">
                     {Object.entries(d.skills || {}).map(([cat, skillList]) => (
-                      <div key={cat} className="border border-[#1a1a1a] p-4">
+                      <div key={cat} className="border border-[#1d2127] p-4">
                         <div className="flex items-center justify-between mb-3">
                           <span className="font-display text-xs text-[#ffd60a] tracking-widest">{cat}</span>
                           <button onClick={() => {
@@ -476,11 +479,11 @@ export default function Admin() {
                               <input value={sk.name} onChange={e => {
                                 const updated = [...skillList]; updated[idx] = { ...sk, name: e.target.value }
                                 setPortfolioData(p => ({ ...p, skills: { ...p.skills, [cat]: updated } }))
-                              }} className="bg-[#0a0a0a] border border-[#222] text-white text-xs px-2 py-1.5 focus:outline-none focus:border-[#ffd60a]/40 flex-1 font-body" placeholder="Skill name" />
+                              }} className="bg-[#0b0d10] border border-[#1d2127] text-white text-xs px-2 py-1.5 focus:outline-none focus:border-[#ffd60a]/40 flex-1 font-body" placeholder="Skill name" />
                               <input type="number" min="1" max="100" value={sk.level} onChange={e => {
                                 const updated = [...skillList]; updated[idx] = { ...sk, level: Number(e.target.value) }
                                 setPortfolioData(p => ({ ...p, skills: { ...p.skills, [cat]: updated } }))
-                              }} className="bg-[#0a0a0a] border border-[#222] text-[#ffd60a] text-xs px-2 py-1.5 w-16 text-center focus:outline-none font-display" />
+                              }} className="bg-[#0b0d10] border border-[#1d2127] text-[#ffd60a] text-xs px-2 py-1.5 w-16 text-center focus:outline-none font-display" />
                               <span className="font-display text-[10px] text-gray-600">%</span>
                               <button onClick={() => {
                                 const updated = skillList.filter((_, j) => j !== idx)
@@ -504,8 +507,8 @@ export default function Admin() {
                 </div>
 
                 {/* All Technologies tag cloud */}
-                <div className="bg-[#0d0d0d] border border-[#1a1a1a] p-5 rounded-sm">
-                  <h3 className="font-display text-xs text-[#ffd60a] tracking-widest mb-5 pb-3 border-b border-[#1a1a1a]">
+                <div className="bg-[#0f1115] border border-[#1d2127] p-5 rounded-sm">
+                  <h3 className="font-display text-xs text-[#ffd60a] tracking-widest mb-5 pb-3 border-b border-[#1d2127]">
                     ALL TECHNOLOGIES TAG CLOUD
                   </h3>
                   <div className="flex flex-wrap gap-2 mb-5">
@@ -529,7 +532,7 @@ export default function Admin() {
                         }
                       }}
                       placeholder="Type tech name and press Enter or click Add..."
-                      className="flex-1 bg-[#0a0a0a] border border-[#222] text-white text-xs px-3 py-2 font-body focus:outline-none focus:border-[#ffd60a]/50 placeholder-gray-700" />
+                      className="flex-1 bg-[#0b0d10] border border-[#1d2127] text-white text-xs px-3 py-2 font-body focus:outline-none focus:border-[#ffd60a]/50 placeholder-gray-700" />
                     <button onClick={() => {
                       if (!newTech.trim()) return
                       if ((d.allTechnologies || []).includes(newTech.trim())) { toast.error('Already exists.'); return }
@@ -552,7 +555,7 @@ export default function Admin() {
                   <p className="font-display text-[10px] text-gray-500 tracking-widest">{(d.achievements || []).length} ACHIEVEMENTS</p>
                   <AddBtn label="ADD ACHIEVEMENT" color="#ffd60a" onClick={() => addItem('achievements', {
                     id: Date.now(), title: 'New Achievement', event: 'Event / Competition Name',
-                    icon: '🏆', color: '#ffd60a', link: '#',
+                     link: '#',
                   })} />
                 </div>
 
@@ -562,8 +565,6 @@ export default function Admin() {
                     <div className="grid md:grid-cols-2 gap-4">
                       <Field label="TITLE" value={ach.title} onChange={v => updItem('achievements', ach.id, 'title', v)} />
                       <Field label="EVENT / COMPETITION" value={ach.event} onChange={v => updItem('achievements', ach.id, 'event', v)} />
-                      <Field label="ICON (emoji)" value={ach.icon} onChange={v => updItem('achievements', ach.id, 'icon', v)} />
-                      <Field label="ACCENT COLOR" value={ach.color} onChange={v => updItem('achievements', ach.id, 'color', v)} placeholder="#ffd60a" />
                       <div className="md:col-span-2">
                         <Field label="CERTIFICATE / PROOF LINK (optional)" value={ach.link} onChange={v => updItem('achievements', ach.id, 'link', v)} placeholder="https://..." />
                       </div>
@@ -606,7 +607,7 @@ export default function Admin() {
         {/* Sticky save */}
         <div className="fixed bottom-6 right-6 z-50">
           <button onClick={handleSave}
-            className="flex items-center gap-2 bg-[#00f5d4] text-black font-display text-xs tracking-widest px-6 py-3 shadow-[0_0_30px_rgba(0,245,212,0.4)] hover:bg-[#00d4b8] transition-colors">
+            className="flex items-center gap-2 bg-[#5fd3bd] text-black font-display text-xs tracking-widest px-6 py-3 shadow-[0_0_30px_rgba(0,245,212,0.4)] hover:bg-[#74e0cb] transition-colors">
             <Save size={14} /> SAVE CHANGES
           </button>
         </div>

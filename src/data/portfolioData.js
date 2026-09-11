@@ -15,7 +15,7 @@ export const personalInfo = {
   email: "vkumar26062003@gmail.com",
   phone: "+91 7800982247",
   location: "Gorakhpur, Uttar Pradesh",
-  bio: "Engineering intelligent systems at the intersection of web, mobile, and AI. I build scalable full-stack applications, ML-powered tools, and automation workflows that solve real problems.",
+  bio: "Engineering intelligent systems at the intersection of web, mobile and AI. I build scalable full-stack applications, ML-powered tools and automation workflows that solve real problems.",
   resumeLink: "https://drive.google.com/file/d/1KLeIi8zzWBBjdnpIw42WKz8nMKb6-agr/view?usp=sharing",
   portfolioLink: "https://vishal-nu.vercel.app/",
 };
@@ -33,9 +33,9 @@ export const socialLinks = {
 export const education = [
   {
     id: 1,
-    degree: "B.Tech — Computer Science & Engineering",
+    degree: "B.Tech - Computer Science & Engineering",
     institution: "MMMUT, Gorakhpur",
-    period: "2023 — Ongoing",
+    period: "2023 - Ongoing",
     score: "9.28 / 10.0",
     type: "cgpa",
     highlight: true,
@@ -64,33 +64,33 @@ export const experience = [
   {
     id: 1,
     role: "IT Intern",
-    company: "Aditya Birla Group — Hindalco Industries",
-    period: "May 2025 — June 2025",
+    company: "Aditya Birla Group - Hindalco Industries",
+    period: "May 2025 - June 2025",
     type: "Industry",
     color: "#00f5d4",
     certLink: "https://drive.google.com/file/d/1UjFBFPp4kX1biT9tJScWsTKimtgX7wXW/view?usp=sharing",
     points: [
       "Engineered and deployed the 'About Renusagar' web platform, establishing the campus's digital identity.",
-      "Enhanced professional skills in corporate collaboration, task ownership, and client communication.",
+      "Enhanced professional skills in corporate collaboration, task ownership and client communication.",
     ],
   },
   {
     id: 2,
     role: "Development Team Member",
     company: "MMMUT Reso | Technical Society MMMUT",
-    period: "July 2025 — Jan 2026",
+    period: "July 2025 - Jan 2026",
     type: "Tech Society",
     color: "#7c3aed",
     certLink: "https://drive.google.com/file/d/1TbK13LpBtARZWu1gFyq-LNN75A9ECMW4/view?usp=sharing",
     points: [
-      "Spearheading development of MMMUT.XYZ — an interactive academic platform for 5,000+ students.",
+      "Spearheading development of MMMUT.XYZ - an interactive academic platform for 5,000+ students.",
       "Fostering innovation and learning culture through active tech contributions.",
     ],
   },
   {
     id: 3,
     role: "Social Intern",
-    company: "Save Child Beggar Foundation — Delhi",
+    company: "Save Child Beggar Foundation - Delhi",
     period: "June 2025",
     type: "NGO",
     color: "#ffd60a",
@@ -160,7 +160,7 @@ export const projects = [
     title: "Travel Roots",
     subtitle: "Full-Stack Booking Platform",
     description:
-    "Developed a full-stack booking platform using Node.js, Express (MVC architecture), and MongoDB."
+    "Developed a full-stack booking platform using Node.js, Express (MVC architecture) and MongoDB."
     "Implemented secure authentication with Passport.js, supporting local login and Google/GitHub OAuth."
     "Integrated Razorpay payment gateway with server-side verification for secure transactions."
     "Configured Razorpay Webhooks to handle asynchronous payment events and ensure reliable payment confirmation."
@@ -183,7 +183,7 @@ export const projects = [
       "Built a real-time AI-powered IDS using hybrid Autoencoder (Deep Learning) + XGBoost (Machine Learning) ensemble achieving 99.0% accuracy on CIC-IDS2017 benchmark dataset with 99.7% AUC-ROC."
       "Implemented live packet sniffing using Scapy with real-time 30-feature extraction, classifying network traffic as ATTACK or NORMAL at 12.6 ms average latency per packet."
       "Developed an Attack Simulator detecting DDoS, BruteForce, SQL Injection and Port Scan."
-      "Deployed a Streamlit real-time dashboard with live packet feed, threat alerts, confusion matrix, traffic timeline, and attack type breakdown with auto-refresh every second.",
+      "Deployed a Streamlit real-time dashboard with live packet feed, threat alerts, confusion matrix, traffic timeline and attack type breakdown with auto-refresh every second.",
     tech: ["Python", "TensorFlow", "Scikit-learn", "Federated Learning", "SHAP", "LIME"],
     links: {
       live: "https://adaptive-ai-driven-intrusion-detection-protection-system.streamlit.app",
@@ -219,7 +219,7 @@ export const projects = [
   title: "File Sharing System",
   subtitle: "Secure File Transfer Platform",
   description:
-    "Developed a secure file sharing system for uploading, storing, and sharing files via unique access links."
+    "Developed a secure file sharing system for uploading, storing and sharing files via unique access links."
     "Implemented backend using Node.js and Express with efficient file handling and RESTful APIs."
     "Enabled file uploads with size validation and secure storage management on the server."
     "Generated unique shareable links for controlled file access and easy distribution."
@@ -260,9 +260,9 @@ export const projects = [
   subtitle: "Corporate Internship Project (Hindalco)",
   description:
     "Engineered and deployed the 'About Renusagar' web platform to establish the campus’s digital identity and online presence."
-    "Developed a responsive and user-friendly interface to showcase infrastructure, facilities, and organizational information."
+    "Developed a responsive and user-friendly interface to showcase infrastructure, facilities and organizational information."
     "Collaborated in a corporate environment at Hindalco Industries (Aditya Birla Group) to deliver a production-ready solution."
-    "Strengthened professional skills including client communication, task ownership, and agile development practices."
+    "Strengthened professional skills including client communication, task ownership and agile development practices."
     "Successfully hosted the platform on Vercel ensuring accessibility and performance optimization.",
   tech: ["React.js", "JavaScript", "HTML", "CSS", "Vercel"],
   links: {
@@ -281,7 +281,7 @@ export const projects = [
   description:
     "Performed in-depth analysis of unemployment trends using Python and real-world datasets."
     "Cleaned and preprocessed raw data to ensure accuracy and consistency for analysis."
-    "Created insightful visualizations to identify patterns, seasonal trends, and regional variations."
+    "Created insightful visualizations to identify patterns, seasonal trends and regional variations."
     "Used statistical techniques to interpret unemployment rates and economic indicators."
     "Developed an interactive Google Colab notebook for reproducible analysis and experimentation.",
   tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
@@ -300,7 +300,7 @@ export const projects = [
   subtitle: "Machine Learning Classifier",
   description:
     "Developed a machine learning model to classify emails as spam or not spam using NLP techniques."
-    "Performed text preprocessing including tokenization, stopword removal, and vectorization."
+    "Performed text preprocessing including tokenization, stopword removal and vectorization."
     "Trained and evaluated models such as Naive Bayes for efficient classification."
     "Achieved high accuracy through feature extraction and model optimization."
     "Implemented the solution in a Google Colab notebook for easy experimentation and deployment.",
@@ -320,7 +320,7 @@ export const projects = [
   subtitle: "Regression Model",
   description:
     "Built a machine learning regression model to predict car prices based on various features."
-    "Performed data cleaning, feature engineering, and exploratory data analysis."
+    "Performed data cleaning, feature engineering and exploratory data analysis."
     "Trained regression algorithms to estimate prices with improved accuracy."
     "Evaluated model performance using metrics like R-squared and Mean Squared Error."
     "Implemented the project in Google Colab for easy access and reproducibility.",
@@ -397,15 +397,15 @@ export const skills = {
 export const achievements = [
   {
     id: 1,
-    title: "3rd Place — Editing Competition",
-    event: "CSA Fest – TECHSRIJAN'24",
+    title: "3rd Place - Editing Competition",
+    event: "CSA Fest - TECHSRIJAN'24",
     icon: "🥉",
     color: "#00f5d4",
     link: "https://drive.google.com/file/d/1XmDMkpbr7tmL44qfx4c5S2iEdBDaEBmh/view?usp=drive_link",
   },
   {
     id: 2,
-    title: "4th Place — GDG Hackathon",
+    title: "4th Place - GDG Hackathon",
     event: "Competed among 90+ teams",
     icon: "🏆",
     color: "#7c3aed",
@@ -413,7 +413,7 @@ export const achievements = [
   },
   {
     id: 3,
-    title: "3rd Place — Snap Shuffles",
+    title: "3rd Place - Snap Shuffles",
     event: "ACE Civil Engineering Society",
     icon: "🥉",
     color: "#00d68f",
@@ -421,15 +421,15 @@ export const achievements = [
   },
   {
     id: 4,
-    title: "Pre-Final Round — Code for Bharat",
-    event: "Microsoft Hackathon — Among 10,500+ teams",
+    title: "Pre-Final Round - Code for Bharat",
+    event: "Microsoft Hackathon - Among 10,500+ teams",
     icon: "⚡",
     color: "#ffd60a",
     link: "https://drive.google.com/file/d/1jEPPiJaMVXTIK2oie_pgLQiVPHb2lyqX/view?usp=drive_link",
   },
   {
     id: 5,
-    title: "Participated — Sparkathon",
+    title: "Participated - Sparkathon",
     event: "Walmart All India Hackathon",
     icon: "🔥",
     color: "#ff3366",
@@ -449,7 +449,7 @@ export const certifications = [
   {
     id: 1,
     title: "IT Intern Certificate",
-    issuer: "Hindalco Industries — Aditya Birla Group",
+    issuer: "Hindalco Industries - Aditya Birla Group",
     date: "June 2025",
     link: "https://drive.google.com/file/d/1UjFBFPp4kX1biT9tJScWsTKimtgX7wXW/view?usp=drive_link",
   },
@@ -470,7 +470,7 @@ export const certifications = [
     {
     id: 4,
     title: "AI Workshop Participation",
-    issuer: "Centre of Excellence – AI Lab, MMMUT (AISpark)",
+    issuer: "Centre of Excellence - AI Lab, MMMUT (AISpark)",
     date: "July 2025",
     link: "https://drive.google.com/file/d/16qK8W2Ab_wrGWnvNywkonitLNhSMIbzX/view?usp=sharing",
   },
