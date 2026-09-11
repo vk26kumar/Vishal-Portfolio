@@ -1,52 +1,57 @@
-import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { ArrowUp } from 'lucide-react'
+import { usePortfolio } from '../context/DataContext'
 
 export default function Footer() {
   const navigate = useNavigate()
-  const [clickCount, setClickCount] = useState(0)
+  const { portfolioData } = usePortfolio()
+  const [clicks, setClicks] = useState(0)
 
-  // Secret admin trigger - click the dot 3 times
+  // Hidden entry point: three clicks on the dot opens the CMS
   const handleSecretClick = () => {
-    const newCount = clickCount + 1
-    setClickCount(newCount)
-    if (newCount >= 3) {
-      setClickCount(0)
+    const next = clicks + 1
+    setClicks(next)
+    if (next >= 3) {
+      setClicks(0)
       navigate('/admin')
     }
   }
 
   return (
-    <footer className="border-t border-[#1a1a1a] py-10 relative">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <span className="font-display text-xs text-gray-600">
-            {'>'} VISHAL KUMAR <span className="text-[#00f5d4]">_</span>
-          </span>
-          <span className="font-display text-[10px] text-gray-700">
-            © {new Date().getFullYear()} — Designed & Built with ❤️
-          </span>
+    <footer className="relative border-t border-line">
+      <div className="page-container py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <p className="font-mono text-[12px] tracking-tight text-txt">
+            Vishal Kumar<span className="text-accent">.</span>
+          </p>
+          <p className="mt-1.5 text-[12px] text-faint">
+            © {new Date().getFullYear()} - Designed &amp; built from scratch.
+          </p>
         </div>
 
         <div className="flex items-center gap-6">
-          <span className="font-display text-[10px] text-gray-700 tracking-widest">
-            FULL STACK · AI/ML · REACT NATIVE
-          </span>
+          <a
+            href={portfolioData.personal?.resumeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-faint hover:text-txt transition-colors"
+          >
+            Résumé
+          </a>
           <a
             href="#home"
-            className="font-display text-[10px] text-gray-600 hover:text-[#00f5d4] transition-colors tracking-widest"
+            className="inline-flex items-center gap-1.5 font-mono text-[10.5px] tracking-[0.12em] uppercase text-faint hover:text-txt transition-colors"
           >
-            BACK TO TOP ↑
+            Top <ArrowUp size={11} />
           </a>
         </div>
       </div>
 
-      {/* Hidden admin trigger - tiny dot in bottom-left */}
       <button
         onClick={handleSecretClick}
         className="admin-trigger"
-        title=""
-        aria-label="hidden"
+        aria-label="Admin access"
       />
     </footer>
   )

@@ -1,103 +1,139 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ExternalLink } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { usePortfolio } from '../context/DataContext'
 
 export default function Achievements() {
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
+  const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: true })
   const { portfolioData } = usePortfolio()
   const achievements = portfolioData.achievements || []
   const certifications = portfolioData.certifications || []
+  const positions = portfolioData.positions || []
 
-  const openLink = (e, url) => {
-    e.preventDefault()
-    e.stopPropagation()
-    if (url && url !== '#') window.open(url, '_blank', 'noopener,noreferrer')
-  }
+  const hasLink = url => url && url !== '#'
+
+  const Group = ({ label, count, children, delay }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 14 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay }}
+      className="mt-16"
+    >
+      <p className="mono-label">
+        {label} <span className="text-line-strong">·</span> {count}
+      </p>
+      <div className="mt-6">{children}</div>
+    </motion.div>
+  )
 
   return (
-    <section id="achievements" className="py-24 relative" ref={ref}>
-      <div className="absolute left-0 top-24 font-accent text-[12rem] leading-none text-white/[0.02] select-none pointer-events-none">05</div>
-
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="mb-16">
-          <p className="section-tag mb-3">// achievements</p>
-          <h2 className="font-accent text-5xl md:text-7xl text-white">
-            WINS & <span style={{ color: '#ff3366' }}>MILESTONES</span>
+    <section id="achievements" className="section" ref={ref}>
+      <div className="page-container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="eyebrow">
+            <span className="eyebrow-num">05</span> Recognition
+          </p>
+          <h2 className="section-title mt-5 max-w-2xl">
+            Competitions, leadership and credentials.
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
-          {achievements.map((ach, i) => (
-            <motion.div key={ach.id}
-              initial={{ opacity: 0, scale: 0.9 }} animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: i * 0.1 }}
-              className="cyber-card p-6 rounded-none group relative flex flex-col">
-
-              <div className="flex items-start gap-4 mb-4">
-                <span className="text-3xl group-hover:scale-110 transition-transform block flex-shrink-0">{ach.icon}</span>
-                <div className="flex-1">
-                  <h3 className="font-display text-sm font-bold mb-1" style={{ color: ach.color }}>
-                    {ach.title}
-                  </h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">{ach.event}</p>
+        {/* ── Achievements ── */}
+        <Group label="Achievements" count={achievements.length} delay={0.1}>
+          <ul className="border-b border-line">
+            {achievements.map(ach => (
+              <li
+                key={ach.id}
+                className="border-t border-line py-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8"
+              >
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-[14.5px] leading-snug text-txt">{ach.title}</h3>
+                  <p className="mt-1 text-[13px] text-faint">{ach.event}</p>
                 </div>
-              </div>
-
-              <div className="mt-auto pt-3 border-t border-[#1a1a1a] flex items-center justify-between">
-                <div className="h-px flex-1 mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: 'linear-gradient(90deg, ' + ach.color + ', transparent)' }} />
-                {ach.link && ach.link !== '#' ? (
-                  <button
-                    onClick={(e) => openLink(e, ach.link)}
-                    style={{ position: 'relative', zIndex: 10, cursor: 'pointer', color: ach.color, border: '1px solid ' + ach.color + '50', background: ach.color + '15' }}
-                    className="flex items-center gap-1.5 font-display text-[9px] tracking-widest px-3 py-1.5 transition-all duration-200 hover:opacity-80 flex-shrink-0"
+                {hasLink(ach.link) && (
+                  <a
+                    href={ach.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-ghost btn-sm shrink-0 self-start sm:self-auto"
                   >
-                    <ExternalLink size={9} /> Certificate
-                  </button>
-                ) : (
-                  <span className="font-display text-[9px] text-gray-700 tracking-widest flex-shrink-0">NO LINK YET</span>
+                    Certificate <ArrowUpRight size={11} />
+                  </a>
                 )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </li>
+            ))}
+          </ul>
+        </Group>
 
-        {/* Certifications */}
-        {certifications.length > 0 && (
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.6 }}>
-            <p className="section-tag mb-6">// certifications</p>
-            <div className="grid md:grid-cols-3 gap-4">
-              {certifications.map((cert, i) => (
-                <motion.div key={cert.id}
-                  initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.7 + i * 0.1 }}
-                  className="cyber-card p-5 rounded-none border-t-2 border-[#00f5d4]/30 group hover:border-[#00f5d4] transition-all duration-300 flex flex-col">
-
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[#00f5d4] text-lg">◆</span>
-                    <span className="font-display text-xs text-white">{cert.title}</span>
+        {/* ── Positions of responsibility ── */}
+        {positions.length > 0 && (
+          <Group label="Positions of responsibility" count={positions.length} delay={0.15}>
+            <ul className="border-b border-line">
+              {positions.map(pos => (
+                <li
+                  key={pos.id}
+                  className="border-t border-line py-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8"
+                >
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-[14.5px] leading-snug text-txt">{pos.role}</h3>
+                    <p className="mt-1 text-[13px] text-faint">{pos.org}</p>
                   </div>
-                  <p className="text-xs text-gray-500 mb-1">{cert.issuer}</p>
-                  <p className="font-display text-[10px] text-[#00f5d4]/60 mb-4">{cert.date}</p>
-
-                  <div className="mt-auto pt-3 border-t border-[#1a1a1a]">
-                    {cert.link && cert.link !== '#' ? (
-                      <button
-                        onClick={(e) => openLink(e, cert.link)}
-                        style={{ position: 'relative', zIndex: 10, cursor: 'pointer', color: '#00f5d4', border: '1px solid rgba(0,245,212,0.35)', background: 'rgba(0,245,212,0.08)' }}
-                        className="flex items-center gap-1.5 font-display text-[9px] tracking-widest px-3 py-1.5 transition-all duration-200 hover:opacity-80"
-                      >
-                        <ExternalLink size={9} /> VIEW CERTIFICATE
-                      </button>
-                    ) : (
-                      <span className="font-display text-[9px] text-gray-700 tracking-widest">LINK NOT ADDED</span>
-                    )}
-                  </div>
-                </motion.div>
+                  <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-faint shrink-0 sm:text-right sm:w-40">
+                    {pos.period}
+                  </span>
+                  {hasLink(pos.link) && (
+                    <a
+                      href={pos.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-ghost btn-sm shrink-0 self-start sm:self-auto"
+                    >
+                      Certificate <ArrowUpRight size={11} />
+                    </a>
+                  )}
+                </li>
               ))}
-            </div>
-          </motion.div>
+            </ul>
+          </Group>
+        )}
+
+        {/* ── Certifications ── */}
+        {certifications.length > 0 && (
+          <Group label="Certifications" count={certifications.length} delay={0.2}>
+            <ul className="border-b border-line">
+              {certifications.map(cert => (
+                <li
+                  key={cert.id}
+                  className="border-t border-line py-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8"
+                >
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-[14.5px] leading-snug text-txt">{cert.title}</h3>
+                    <p className="mt-1 text-[13px] text-faint">
+                      {cert.issuer} <span className="text-line-strong">·</span> {cert.date}
+                    </p>
+                  </div>
+                  {hasLink(cert.link) ? (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-ghost btn-sm shrink-0 self-start sm:self-auto"
+                    >
+                      View <ArrowUpRight size={11} />
+                    </a>
+                  ) : (
+                    <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-faint shrink-0">
+                      Link pending
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </Group>
         )}
       </div>
     </section>

@@ -1,65 +1,133 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { ArrowUpRight } from 'lucide-react'
 import { usePortfolio } from '../context/DataContext'
 
 export default function Experience() {
-  const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true })
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
   const { portfolioData } = usePortfolio()
   const experience = portfolioData.experience || []
 
-  return (
-    <section id="experience" className="py-24 relative" ref={ref}>
-      <div className="absolute left-0 top-24 font-accent text-[12rem] leading-none text-white/[0.02] select-none pointer-events-none">02</div>
+  // Turns tokens listed in exp.links (e.g. "saasify.ai") into real anchors
+  // inside a bullet, leaving the rest of the sentence untouched.
+  const renderPoint = (text, links) => {
+    const tokens = Object.keys(links || {})
+    if (!tokens.length) return text
+    const escaped = tokens
+      .sort((a, b) => b.length - a.length)
+      .map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    return text
+      .split(new RegExp('(' + escaped.join('|') + ')', 'g'))
+      .map((part, k) =>
+        links[part] ? (
+          <a
+            key={k}
+            href={links[part]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-accent"
+          >
+            {part}
+          </a>
+        ) : (
+          part
+        )
+      )
+  }
 
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="mb-16">
-          <p className="section-tag mb-3">// experience</p>
-          <h2 className="font-accent text-5xl md:text-7xl text-white">
-            WHERE I'VE <span style={{ color: '#7c3aed' }}>WORKED</span>
+  // 'incoming' = offer accepted, not started yet; 'current' = active today
+  const chipFor = exp => {
+    if (exp.status === 'incoming') return 'Incoming'
+    if (exp.status === 'current' || /ongoing|present/i.test(exp.period || '')) return 'Current'
+    return null
+  }
+
+  return (
+    <section id="experience" className="section" ref={ref}>
+      <div className="page-container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="eyebrow">
+            <span className="eyebrow-num">02</span> Experience
+          </p>
+          <h2 className="section-title mt-5 max-w-2xl">
+            Where I&apos;ve built and shipped.
           </h2>
         </motion.div>
 
-        <div className="relative">
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#00f5d4] via-[#7c3aed] to-transparent ml-6 md:ml-0 -translate-x-1/2" />
-          <div className="space-y-12">
-            {experience.map((exp, i) => (
-              <motion.div key={exp.id}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: i * 0.2, duration: 0.7 }}
-                className={'relative flex ' + (i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse') + ' items-center gap-8 pl-14 md:pl-0'}
-              >
-                <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full border-2 z-10 -translate-x-1/2 ml-6 md:ml-0"
-                  style={{ borderColor: exp.color, background: '#050505', boxShadow: '0 0 15px ' + exp.color }} />
+        <ol className="rail mt-14 space-y-14">
+          {experience.map((exp, i) => {
+            const points =
+              typeof exp.points === 'string'
+                ? exp.points.split('\n')
+                : exp.points || []
+            const chip = chipFor(exp)
 
-                <div className={'w-full md:w-[calc(50%-3rem)] ' + (i % 2 === 0 ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8')}>
-                  <div className="cyber-card p-6 rounded-none hover:border-[#2a2a2a] transition-all duration-300 group">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <span className="font-display text-[10px] tracking-widest px-2 py-1 rounded-sm mb-2 inline-block"
-                          style={{ color: exp.color, background: exp.color + '15', border: '1px solid ' + exp.color + '30' }}>
-                          {exp.type}
-                        </span>
-                        <h3 className="font-display text-base text-white mt-2">{exp.role}</h3>
-                        <p className="text-xs text-gray-500 mt-1">{exp.company}</p>
-                      </div>
-                      <span className="font-display text-[10px] text-gray-600 text-right">{exp.period}</span>
-                    </div>
-                    <ul className="space-y-2 mt-4">
-                      {(typeof exp.points === 'string' ? exp.points.split('\n') : exp.points || [])
-                        .filter(Boolean).map((point, j) => (
-                        <li key={j} className="flex gap-2 text-xs text-gray-400 leading-relaxed">
-                          <span style={{ color: exp.color }} className="flex-shrink-0 mt-0.5">▸</span>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+            return (
+              <motion.li
+                key={exp.id}
+                initial={{ opacity: 0, y: 18 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.55, delay: Math.min(i * 0.08, 0.32) }}
+                className={`rail-item relative ${chip ? 'rail-item-current' : ''}`}
+              >
+                <span className="rail-dot" aria-hidden="true" />
+
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
+                  <h3 className="text-[17px] font-medium tracking-tight text-txt">
+                    {exp.role}
+                  </h3>
+                  {chip && (
+                    <span className="font-mono text-[9.5px] tracking-[0.12em] uppercase text-accent border border-accent/30 bg-accent/[0.08] px-2 py-0.5 rounded-[4px]">
+                      {chip}
+                    </span>
+                  )}
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+
+                <p className="mt-1.5 text-sm text-muted">{exp.company}</p>
+
+                <div className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10.5px] tracking-[0.1em] uppercase text-faint">
+                  <span>{exp.period}</span>
+                  {exp.mode && (
+                    <>
+                      <span className="text-line-strong">·</span>
+                      <span>{exp.mode}</span>
+                    </>
+                  )}
+                  {exp.type && (
+                    <>
+                      <span className="text-line-strong">·</span>
+                      <span>{exp.type}</span>
+                    </>
+                  )}
+                </div>
+
+                <ul className="mt-5 space-y-2.5 max-w-3xl">
+                  {points.filter(Boolean).map((point, j) => (
+                    <li key={j} className="flex gap-3 text-sm leading-relaxed text-muted">
+                      <span className="mt-[9px] h-px w-3 shrink-0 bg-line-strong" />
+                      <span>{renderPoint(point, exp.links)}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {exp.certLink && exp.certLink !== '#' && (
+                  <a
+                    href={exp.certLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-ghost btn-sm mt-6"
+                  >
+                    View certificate <ArrowUpRight size={11} />
+                  </a>
+                )}
+              </motion.li>
+            )
+          })}
+        </ol>
       </div>
     </section>
   )

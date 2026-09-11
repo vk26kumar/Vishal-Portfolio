@@ -2,23 +2,23 @@ import { Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import Portfolio from './pages/Portfolio'
 import Admin from './pages/Admin'
-import CustomCursor from './components/CustomCursor'
 
 export default function App() {
   return (
     <>
-      <CustomCursor />
-      <div className="scanline" />
       <Toaster
         position="bottom-right"
         toastOptions={{
           style: {
-            background: '#0d0d0d',
-            color: '#00f5d4',
-            border: '1px solid #1a1a1a',
-            fontFamily: 'Space Mono, monospace',
-            fontSize: '0.75rem',
+            background: '#14171c',
+            color: '#e9ebee',
+            border: '1px solid #2b3139',
+            borderRadius: '8px',
+            fontFamily: "'Inter', system-ui, sans-serif",
+            fontSize: '13px',
+            padding: '10px 14px',
           },
+          iconTheme: { primary: '#5fd3bd', secondary: '#0a0b0d' },
         }}
       />
       <Routes>
