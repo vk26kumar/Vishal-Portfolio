@@ -6,10 +6,10 @@ export const DEFAULT_DATA = {
   personal: {
     name: 'Vishal Kumar',
     email: 'vkumar26062003@gmail.com',
-    phone: '+91 7800982247',
+    phone: '+91 9532577932',
     location: 'Gorakhpur, Uttar Pradesh',
     bio: 'AI Native Web Developer at Spektra Systems (SaaSify), building a live cloud go-to-market platform used by ISVs and channel partners. I work across full-stack web, React Native and ML - shipping automation and AI-driven systems that solve real business problems.',
-    resumeLink: 'https://drive.google.com/file/d/1TwmZZa8-fuVq9UTyJ07B856WMsNTnPhY/view?usp=sharing',
+    resumeLink: 'https://drive.google.com/file/d/1fStZJ8vzAOoECmGip3XfRLZmgJy4T0c8/view?usp=sharing',
     portfolioLink: 'https://www.vishaljaiswal.tech/',
     taglines: [
       'Software Developer',
@@ -25,9 +25,6 @@ export const DEFAULT_DATA = {
     { id: 2, label: 'LinkedIn', href: 'https://www.linkedin.com/in/vishal-kumar2606/' },
     { id: 3, label: 'LeetCode', href: 'https://leetcode.com/u/code_with_Vishal/' },
     { id: 4, label: 'GeeksForGeeks', href: 'https://www.geeksforgeeks.org/user/vkumar26wiq5/' },
-    { id: 5, label: 'CodeChef', href: 'https://www.codechef.com/users/code_vishal_27' },
-    { id: 6, label: 'Codeforces', href: 'https://codeforces.com/profile/vishal_26_kumar' },
-    { id: 7, label: 'Kaggle', href: 'https://www.kaggle.com/vishalkumar00126' },
     { id: 8, label: 'Portfolio', href: 'https://www.vishaljaiswal.tech/' },
   ],
   education: [
@@ -129,6 +126,13 @@ export const DEFAULT_DATA = {
     },
   ],
   positions: [
+    {
+      id: 3,
+      role: 'Core Organizing Committee Member',
+      org: "Internal Smart India Hackathon (SIH'26), MMMUT",
+      period: '2026',
+      link: 'https://drive.google.com/file/d/1LLXCb7sG-k2sx_XcB_4PxTPdyQFh0mlJ/view?usp=sharing',
+    },
     {
       id: 1,
       role: 'Core Organizing Committee Member',
@@ -367,7 +371,7 @@ export const DEFAULT_DATA = {
 
 // VERSION TAG - increment this whenever you update DEFAULT_DATA
 // This forces the live site to pick up new data even if localStorage exists
-const DATA_VERSION = '2026-09-11-v12'
+const DATA_VERSION = '2026-09-28-v15'
 
 const DataContext = createContext(null)
 
