@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { usePortfolio } from '../context/DataContext'
 
-const PHOTO = '/image.png'
+const PHOTO = '/profile.jpg'
 // Zooms the podium photo in on the face so it sits centred in a circle
 const FACE_CROP = { transform: 'scale(1.9)', transformOrigin: '39% 30%' }
 

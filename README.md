@@ -1,158 +1,109 @@
-# Vishal Kumar — Portfolio
+# Vishal Kumar - Portfolio
 
-A cyberpunk-themed, animated developer portfolio built with React + Vite + Framer Motion.
+Personal portfolio of Vishal Kumar, a software engineer working across full-stack web, React Native and applied machine learning.
 
----
+Live site: https://www.vishaljaiswal.tech
 
-## 🚀 Quick Start (VS Code)
+## Features
 
-### Step 1 — Prerequisites
-Make sure you have installed:
-- **Node.js** v18+ → https://nodejs.org
-- **VS Code** → https://code.visualstudio.com
+- Single-page layout with sections for About, Experience, Work, Skills, Recognition and Contact
+- Project grid with filters (Selected, All, AI / ML, Web, Mobile)
+- Achievements, certifications and positions of responsibility, each linked to its certificate
+- Contact form that opens a pre-filled email to the site owner
+- Responsive layout with a fixed navigation bar and a mobile menu
+- Motion that respects the operating system's reduced-motion setting
+- SEO metadata: Open Graph and Twitter cards, a share image, structured data (schema.org Person), `robots.txt` and `sitemap.xml`
+- A local content editor at `/admin` for previewing edits in the browser
 
-### Step 2 — Open in VS Code
-1. Extract / place this folder somewhere on your computer
-2. Open **VS Code**
-3. Go to `File → Open Folder` and select `vishal-portfolio`
+## Tech stack
 
-### Step 3 — Open Terminal in VS Code
-Press `` Ctrl + ` `` (backtick) to open the integrated terminal
+| Area | Technology |
+|---|---|
+| UI | React 18 |
+| Build tool | Vite 5 |
+| Styling | Tailwind CSS 3 with CSS design tokens |
+| Animation | Framer Motion |
+| Routing | React Router 6 |
+| Icons | lucide-react |
+| Hosting | Vercel |
 
-### Step 4 — Install Dependencies
+## Getting started
+
+Requirements: Node.js 18 or later (the version in `.nvmrc` is recommended) and npm.
+
 ```bash
 npm install
-```
-Wait for it to finish (~1-2 minutes on first run).
-
-### Step 5 — Run the Dev Server
-```bash
 npm run dev
 ```
 
-You'll see:
-```
-  VITE v5.x.x  ready in xxx ms
+The development server prints its local address, usually http://localhost:5173.
 
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: ...
-```
+## Scripts
 
-### Step 6 — Open in Browser
-Visit: **http://localhost:5173**
+| Command | What it does |
+|---|---|
+| `npm run dev` | Starts the development server with hot reload |
+| `npm run build` | Builds the production site into `dist/` |
+| `npm run preview` | Serves the production build locally |
 
----
-
-## 🔐 Admin Panel
-
-Access your portfolio CMS to add/edit/remove content **without touching code**.
-
-### How to open Admin Panel:
-**Method 1 (Hidden button):**  
-Go to your portfolio → scroll to the very bottom → click the tiny dot in the **bottom-left corner 3 times**
-
-**Method 2 (Direct URL):**  
-Visit: `http://localhost:5173/admin`
-
-### Default Password:
-```
-vishal@admin2024
-```
-
-> To change the password, open `src/pages/Admin.jsx` and find line:
-> `const ADMIN_PASSWORD = 'vishal@admin2024'`
-> Replace with your own password.
-
-### What you can manage from Admin:
-- ✅ Personal info (name, email, phone, bio, location)
-- ✅ Resume link
-- ✅ Animated taglines in hero
-- ✅ All social links
-- ✅ Projects (add, edit, remove, toggle featured)
-- ✅ Experience entries
-- ✅ Achievements
-
-**Note:** Admin saves data to your browser's localStorage. This means changes persist on the same browser but are local. For production deployment, connect to a backend or use the data file approach.
-
----
-
-## 📁 Project Structure
+## Project structure
 
 ```
-vishal-portfolio/
-├── public/
-│   └── favicon.svg
+.
+├── public/                  Static files served as-is
+│   ├── favicon.svg
+│   ├── og-image.jpg         Share image for social previews (1200 x 630)
+│   ├── profile.jpg          Profile photo used in the hero
+│   ├── robots.txt
+│   └── sitemap.xml
 ├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx          ← Navigation bar
-│   │   ├── Hero.jsx            ← Landing section with particles
-│   │   ├── About.jsx           ← About + Education
-│   │   ├── Experience.jsx      ← Work experience timeline
-│   │   ├── Projects.jsx        ← Projects grid with filter
-│   │   ├── Skills.jsx          ← Skills with animated bars
-│   │   ├── Achievements.jsx    ← Awards + Certifications
-│   │   ├── Contact.jsx         ← Contact form + social links
-│   │   ├── Footer.jsx          ← Footer with hidden admin trigger
-│   │   └── CustomCursor.jsx    ← Custom animated cursor
-│   ├── data/
-│   │   └── portfolioData.js    ← ALL portfolio content (edit this!)
+│   ├── components/          One component per page section
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Achievements.jsx
+│   │   ├── Contact.jsx
+│   │   └── Footer.jsx
+│   ├── context/
+│   │   └── DataContext.jsx  All portfolio content and the data provider
 │   ├── pages/
-│   │   ├── Portfolio.jsx       ← Main portfolio page
-│   │   └── Admin.jsx           ← CMS admin panel
-│   ├── App.jsx                 ← App with routing
-│   ├── main.jsx                ← Entry point
-│   └── index.css               ← Global styles + animations
-├── index.html
-├── package.json
-├── vite.config.js
+│   │   ├── Portfolio.jsx    The main page
+│   │   └── Admin.jsx        Local content editor
+│   ├── App.jsx              Routes
+│   ├── main.jsx             Entry point
+│   └── index.css            Design tokens and global styles
+├── index.html               HTML shell, metadata and structured data
+├── vercel.json              Rewrites, security headers and caching
 ├── tailwind.config.js
-└── postcss.config.js
+├── postcss.config.js
+└── vite.config.js
 ```
 
----
+## Updating content
 
-## ✏️ Updating Content (Two Ways)
+All content lives in `DEFAULT_DATA` in `src/context/DataContext.jsx`: personal details, social links, education, experience, positions, projects, skills, achievements and certifications.
 
-### Way 1: Edit the data file directly
-Open `src/data/portfolioData.js` — everything is organized and commented.
+After changing it, increase `DATA_VERSION` in the same file. Visitors' browsers keep a saved copy of the content, and a new version number makes them load the new content instead.
 
-### Way 2: Use the Admin Panel
-Visit `/admin`, log in, and manage everything visually.
+The share image and structured data in `index.html` are separate from `DataContext.jsx`. Update them too when your name, role, phone number or profile links change.
 
----
+### Admin editor
 
-## 🌐 Deploy to Vercel (Free)
+`/admin` opens an editor for the same content. Changes made there are saved only in that browser's local storage. They are not published and other visitors do not see them, so use it to try out edits and copy the result into `DataContext.jsx`. The page is excluded from search engines.
 
-1. Push your code to GitHub
-2. Go to https://vercel.com → Sign in with GitHub
-3. Click "New Project" → Import your repo
-4. Leave all settings default → Click **Deploy**
+## Deployment
 
-Your portfolio will be live at `yourname.vercel.app` in ~1 minute!
+The site deploys to Vercel from the `main` branch. Vercel installs dependencies and runs `npm run build` on every push, so `node_modules/` and `dist/` are not committed.
 
----
+`vercel.json` configures:
 
-## 🎨 Customization Tips
+- A rewrite to `index.html` so client-side routes such as `/admin` load correctly
+- Security headers: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` and `Strict-Transport-Security`
+- Long-term caching for the fingerprinted files in `/assets/`
 
-- **Colors:** Edit CSS variables in `src/index.css` (`:root` block)
-- **Fonts:** Change `font-family` in `tailwind.config.js` and `index.html`
-- **Sections:** Add/remove sections in `src/pages/Portfolio.jsx`
-- **Animations:** Framer Motion variants are in each component
+## License
 
----
-
-## 🆘 Common Issues
-
-**Port already in use:**
-```bash
-npm run dev -- --port 3000
-```
-
-**Module not found errors:**
-```bash
-rm -rf node_modules
-npm install
-```
-
-**Styles not applying:**
-Make sure `src/main.jsx` imports `./index.css`
+Copyright (c) 2026 Vishal Kumar. All rights reserved. The content of this site, including text and images, may not be reused without permission.

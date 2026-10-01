@@ -2,7 +2,13 @@
   "name": "vishal-portfolio",
   "private": true,
   "version": "1.0.0",
+  "description": "Personal portfolio of Vishal Kumar, software engineer (full stack, React Native and applied ML).",
+  "author": "Vishal Kumar <vkumar26062003@gmail.com>",
+  "homepage": "https://www.vishaljaiswal.tech",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "node node_modules/vite/bin/vite.js build",
