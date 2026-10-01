@@ -30,7 +30,6 @@
   /* Fluid type scale */
   --step-display: clamp(2.9rem, 11vw, 6.5rem);
   --step-h2: clamp(1.85rem, 4.2vw, 2.9rem);
-  --step-h3: clamp(1.05rem, 1.6vw, 1.2rem);
   --step-lead: clamp(0.95rem, 1.4vw, 1.0625rem);
 
   /* Vertical rhythm */
@@ -194,14 +193,6 @@ body {
   border-color: var(--line-strong);
   background: var(--elevated);
   transform: translateY(-2px);
-}
-
-/* Kept for the /admin CMS, restyled to the new system */
-.cyber-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
 /* ============================================================

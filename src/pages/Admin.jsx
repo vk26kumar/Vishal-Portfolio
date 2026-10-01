@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LogOut, Save, Plus, Trash2, Eye, Check, X, ChevronDown, ChevronUp, GripVertical } from 'lucide-react'
 import toast from 'react-hot-toast'
-import { usePortfolio, DEFAULT_DATA, STORAGE_KEY } from '../context/DataContext'
+import { usePortfolio, STORAGE_KEY } from '../context/DataContext'
 
 // ─── Shared field components ────────────────────────────────────────────────
 
@@ -327,7 +327,7 @@ export default function Admin() {
                   <p className="font-display text-[10px] text-gray-500 tracking-widest">{(d.social || []).length} LINKS</p>
                 </div>
 
-                {(d.social || []).map((s, i) => (
+                {(d.social || []).map(s => (
                   <div key={s.id} className="bg-[#0f1115] border border-[#1d2127] p-4 flex items-center gap-3">
                     <GripVertical size={14} className="text-gray-700 flex-shrink-0" />
                     <div className="grid grid-cols-2 gap-3 flex-1">

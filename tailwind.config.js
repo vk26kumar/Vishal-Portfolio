@@ -13,7 +13,6 @@ export default {
         muted: '#a2a8b2',
         faint: '#7d848e',
         accent: '#5fd3bd',
-        'accent-dim': '#3f9e8d',
       },
       fontFamily: {
         // Primary families
@@ -23,15 +22,6 @@ export default {
         display: ['JetBrains Mono', 'ui-monospace', 'monospace'],
         body: ['Inter', 'system-ui', 'sans-serif'],
         accent: ['Inter', 'system-ui', 'sans-serif'],
-      },
-      maxWidth: {
-        page: '1200px',
-      },
-      borderRadius: {
-        card: '12px',
-      },
-      transitionTimingFunction: {
-        smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
     },
   },

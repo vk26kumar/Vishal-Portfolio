@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react'
 
 const STORAGE_KEY = 'vk_portfolio_data'
 
-export const DEFAULT_DATA = {
+const DEFAULT_DATA = {
   personal: {
     name: 'Vishal Kumar',
     email: 'vkumar26062003@gmail.com',
@@ -10,7 +10,6 @@ export const DEFAULT_DATA = {
     location: 'Gorakhpur, Uttar Pradesh',
     bio: 'AI Native Web Developer at Spektra Systems (SaaSify), building a live cloud go-to-market platform used by ISVs and channel partners. I work across full-stack web, React Native and ML - shipping automation and AI-driven systems that solve real business problems.',
     resumeLink: 'https://drive.google.com/file/d/1fStZJ8vzAOoECmGip3XfRLZmgJy4T0c8/view?usp=sharing',
-    portfolioLink: 'https://www.vishaljaiswal.tech/',
     taglines: [
       'Software Developer',
       'Full Stack Developer',
@@ -361,7 +360,7 @@ export const DEFAULT_DATA = {
 
 // VERSION TAG - increment this whenever you update DEFAULT_DATA
 // This forces the live site to pick up new data even if localStorage exists
-const DATA_VERSION = '2026-10-02-v20'
+const DATA_VERSION = '2026-10-02-v21'
 
 const DataContext = createContext(null)
 
