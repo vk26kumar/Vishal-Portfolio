@@ -59,14 +59,14 @@ export const DEFAULT_DATA = {
   experience: [
     {
       id: 0,
-      role: 'Incoming Intern - Technology',
+      role: 'Incoming SDE',
       company: 'Finnable Technologies Pvt. Ltd.',
       period: 'Jan 2027 - Jun 2027',
       type: 'Fintech',
       status: 'incoming',
       mode: 'Bengaluru · On-site',
       certLink: '',
-      points: 'Joining Finnable, a consumer-lending fintech, as a Technology Intern on the engineering team in Bengaluru.\nConverting to Software Development Engineer I (SDE I) on completion of my B.Tech.',
+      points: 'Joining Finnable, a consumer-lending fintech, as a Software Development Engineer (SDE) on the engineering team in Bengaluru.',
     },
     {
       id: 1,
@@ -189,6 +189,15 @@ export const DEFAULT_DATA = {
       tech: 'React 19, Vite, React Router, Node.js, Express, MongoDB Atlas, Mongoose, Google Gemini API, Zod, JWT, Passport (Google OAuth), pdfkit, pptxgenjs, GitHub Actions',
       liveLink: 'https://evaluaite.onrender.com/',
       githubLink: 'https://github.com/vk26kumar/evaluaite', featured: true, period: '2025 - 2026',
+    },
+    {
+      id: 17,
+      title: 'Developer Portfolio',
+      subtitle: 'This website',
+      description: 'A single-page portfolio built with React and Vite, with every section driven from one content file and a filterable project grid. Content is versioned, so returning visitors get updates instead of a stale saved copy, and motion respects the reduced-motion setting. It ships with Open Graph and schema.org metadata, a sitemap, security headers and long-term asset caching, and deploys to Vercel on every push.',
+      tech: 'React 18, Vite, Tailwind CSS, Framer Motion, React Router, Vercel',
+      liveLink: 'https://www.vishaljaiswal.tech/',
+      githubLink: 'https://github.com/vk26kumar/Vishal-Portfolio', featured: true, period: '2026',
     },
     {
       id: 3,
@@ -352,7 +361,7 @@ export const DEFAULT_DATA = {
 
 // VERSION TAG - increment this whenever you update DEFAULT_DATA
 // This forces the live site to pick up new data even if localStorage exists
-const DATA_VERSION = '2026-10-02-v19'
+const DATA_VERSION = '2026-10-02-v20'
 
 const DataContext = createContext(null)
 
