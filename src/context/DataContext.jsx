@@ -22,7 +22,7 @@ const DEFAULT_DATA = {
   social: [
     { id: 1, label: 'GitHub', href: 'https://github.com/vk26kumar' },
     { id: 2, label: 'LinkedIn', href: 'https://www.linkedin.com/in/vishal-kumar2606/' },
-    { id: 3, label: 'LeetCode', href: 'https://leetcode.com/u/code_with_Vishal/' },
+    { id: 3, label: 'LeetCode', href: 'https://leetcode.com/u/vk_vishal_jaiswal/' },
     { id: 4, label: 'GeeksForGeeks', href: 'https://www.geeksforgeeks.org/user/vkumar26wiq5/' },
     { id: 8, label: 'Portfolio', href: 'https://www.vishaljaiswal.tech/' },
   ],
@@ -360,7 +360,7 @@ const DEFAULT_DATA = {
 
 // VERSION TAG - increment this whenever you update DEFAULT_DATA
 // This forces the live site to pick up new data even if localStorage exists
-const DATA_VERSION = '2026-10-02-v21'
+const DATA_VERSION = '2026-10-02-v22'
 
 const DataContext = createContext(null)
 
