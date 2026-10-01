@@ -203,12 +203,13 @@ export const DEFAULT_DATA = {
     },
     {
       id: 1,
-      title: 'AI-Evaluate',
-      subtitle: 'AI-Powered Automated Answer Sheet Evaluation',
-      description: 'Designed and delivered a full-stack MERN application - an Express.js REST API backend with MongoDB data models and a ReactJS frontend featuring an interactive digital whiteboard and real-time analytics dashboard. Integrated third-party AI/ML APIs with clean request-response pipelines and robust error handling, structuring server-side modules using SOLID principles.',
-      tech: 'React.js, Node.js, Express.js, MongoDB, JavaScript, REST APIs, AI/ML APIs',
-      liveLink: 'https://ai-evaluaite-1.onrender.com/',
-      githubLink: 'https://github.com/vk26kumar/AI-EvaluAIte', featured: true, period: 'Mar 2025',
+      title: 'AI-EvaluAIte',
+      subtitle: 'AI Grading for Handwritten Answer Sheets',
+      description: "Teachers upload a student's handwritten answer sheet and their own answer key, and get a full marked report in about a minute. Grading runs as a background job in two Gemini passes: the first transcribes the handwriting without ever seeing the model answers, so it can't read what it expects, and the second marks each key point as covered, partly covered or missed. Code then clamps and rounds every mark, and teachers can adjust any score while the AI's original is kept. It also writes question papers with answer keys and PDF export, tracks every student's marks, generates PowerPoint lecture slides and includes a classroom whiteboard.",
+      metrics: [{ value: '~1 min', label: 'Per graded sheet' }, { value: '2-pass', label: 'Read, then mark' }],
+      tech: 'React 19, Vite, React Router, Node.js, Express, MongoDB Atlas, Mongoose, Google Gemini API, Zod, JWT, Passport (Google OAuth), pdfkit, pptxgenjs, GitHub Actions',
+      liveLink: 'https://evaluaite.onrender.com/',
+      githubLink: 'https://github.com/vk26kumar/evaluaite', featured: true, period: '2025 - 2026',
     },
     {
       id: 3,
@@ -371,7 +372,7 @@ export const DEFAULT_DATA = {
 
 // VERSION TAG - increment this whenever you update DEFAULT_DATA
 // This forces the live site to pick up new data even if localStorage exists
-const DATA_VERSION = '2026-09-28-v15'
+const DATA_VERSION = '2026-10-02-v16'
 
 const DataContext = createContext(null)
 
