@@ -13,7 +13,7 @@ Live site: https://www.vishaljaiswal.tech
 - Responsive layout with a fixed navigation bar and a mobile menu
 - Motion that respects the operating system's reduced-motion setting
 - SEO metadata: Open Graph and Twitter cards, a share image, structured data (schema.org Person), `robots.txt` and `sitemap.xml`
-- A local content editor at `/admin` for previewing edits in the browser
+- A content editor at `/admin` for local development (not included in the published site)
 
 ## Tech stack
 
@@ -71,7 +71,7 @@ The development server prints its local address, usually http://localhost:5173.
 │   │   └── DataContext.jsx  All portfolio content and the data provider
 │   ├── pages/
 │   │   ├── Portfolio.jsx    The main page
-│   │   └── Admin.jsx        Local content editor
+│   │   └── Admin.jsx        Content editor, development only
 │   ├── App.jsx              Routes
 │   ├── main.jsx             Entry point
 │   └── index.css            Design tokens and global styles
@@ -92,7 +92,9 @@ The share image and structured data in `index.html` are separate from `DataConte
 
 ### Admin editor
 
-`/admin` opens an editor for the same content. Changes made there are saved only in that browser's local storage. They are not published and other visitors do not see them, so use it to try out edits and copy the result into `DataContext.jsx`. The page is excluded from search engines.
+While `npm run dev` is running, http://localhost:5173/admin opens an editor for the same content. Changes made there are saved only in that browser's local storage and are never published, so use it to try out edits and then copy the result into `DataContext.jsx`.
+
+The editor is left out of the production build, so the published site has no `/admin` page and no password. Any unknown path on the live site redirects to the home page.
 
 ## Deployment
 
@@ -100,7 +102,7 @@ The site deploys to Vercel from the `main` branch. Vercel installs dependencies 
 
 `vercel.json` configures:
 
-- A rewrite to `index.html` so client-side routes such as `/admin` load correctly
+- A rewrite to `index.html` so every path loads the app, which then redirects unknown paths to the home page
 - Security headers: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy` and `Strict-Transport-Security`
 - Long-term caching for the fingerprinted files in `/assets/`
 

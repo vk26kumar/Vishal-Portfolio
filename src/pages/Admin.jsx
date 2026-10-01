@@ -80,16 +80,10 @@ function ToggleBtn({ active, onToggle, labelOn = 'YES', labelOff = 'NO' }) {
   )
 }
 
-// ─── Admin Password ──────────────────────────────────────────────────────────
-const ADMIN_PASSWORD = 'vishal@admin2024'
-
 // ─── Main Admin ──────────────────────────────────────────────────────────────
 export default function Admin() {
   const navigate = useNavigate()
   const { portfolioData, setPortfolioData } = usePortfolio()
-  const [authed, setAuthed] = useState(false)
-  const [password, setPassword] = useState('')
-  const [wrongPw, setWrongPw] = useState(false)
   const [activeTab, setActiveTab] = useState('personal')
   const [newTech, setNewTech] = useState('')
   const [newSocialLabel, setNewSocialLabel] = useState('')
@@ -122,12 +116,6 @@ export default function Admin() {
     toast.success('✅ Saved! Portfolio updated in real-time.')
   }
 
-  // ── Login ──────────────────────────────────────────────────────
-  const login = () => {
-    if (password === ADMIN_PASSWORD) { setAuthed(true); setWrongPw(false) }
-    else { setWrongPw(true); setTimeout(() => setWrongPw(false), 2000) }
-  }
-
   const tabs = [
     { id: 'personal', label: 'Personal & About' },
     { id: 'education', label: 'Education' },
@@ -138,42 +126,6 @@ export default function Admin() {
     { id: 'achievements', label: 'Achievements' },
     { id: 'certifications', label: 'Certifications' },
   ]
-
-  // ═══════════════════════════════════════════════════════════════
-  // LOGIN SCREEN
-  // ═══════════════════════════════════════════════════════════════
-  if (!authed) {
-    return (
-      <div className="min-h-screen bg-[#0a0b0d] flex items-center justify-center px-6">
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-sm">
-          <div className="bg-[#0f1115] border border-[#1d2127] p-10">
-            <div className="text-center mb-8">
-              <div className="font-display text-xs text-[#5fd3bd] tracking-widest mb-2">// ADMIN ACCESS</div>
-              <h1 className="font-accent text-4xl text-white">PORTFOLIO CMS</h1>
-              <p className="font-display text-[10px] text-gray-600 mt-2 tracking-widest">Enter password to continue</p>
-            </div>
-            <div className="space-y-4">
-              <input type="password" placeholder="Password" value={password}
-                onChange={e => setPassword(e.target.value)} onKeyDown={e => e.key === 'Enter' && login()}
-                className={`w-full bg-[#0b0d10] border text-white text-sm px-4 py-3 font-display focus:outline-none transition-colors text-center tracking-widest ${
-                  wrongPw ? 'border-[#ff3366]' : 'border-[#1d2127] focus:border-[#5fd3bd]/50'
-                }`} />
-              {wrongPw && (
-                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                  className="font-display text-[10px] text-[#ff3366] text-center tracking-widest">ACCESS DENIED</motion.p>
-              )}
-              <button onClick={login} className="w-full bg-[#5fd3bd] text-black font-display text-xs tracking-widest py-3 hover:bg-[#74e0cb] transition-colors">
-                AUTHENTICATE
-              </button>
-              <button onClick={() => navigate('/')} className="w-full text-gray-600 font-display text-[10px] tracking-widest hover:text-gray-400 transition-colors">
-                ← BACK TO PORTFOLIO
-              </button>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    )
-  }
 
   const d = portfolioData
 
@@ -198,7 +150,7 @@ export default function Admin() {
             className="flex items-center gap-2 bg-[#5fd3bd] text-black font-display text-xs tracking-widest px-5 py-2 hover:bg-[#74e0cb] transition-colors shadow-[0_0_20px_rgba(0,245,212,0.3)]">
             <Save size={12} /> SAVE ALL
           </button>
-          <button onClick={() => { setAuthed(false); navigate('/') }} className="text-gray-600 hover:text-[#ff3366] transition-colors p-1">
+          <button onClick={() => navigate('/')} aria-label="Exit editor" className="text-gray-600 hover:text-[#ff3366] transition-colors p-1">
             <LogOut size={16} />
           </button>
           </div>

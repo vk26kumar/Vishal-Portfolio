@@ -398,21 +398,3 @@ body {
   overflow: hidden;
 }
 
-/* Hidden /admin entry point in the footer */
-.admin-trigger {
-  position: absolute;
-  bottom: 18px;
-  left: 18px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--line);
-  border: 1px solid var(--line-strong);
-  cursor: pointer;
-  opacity: 0.5;
-  transition: opacity 0.25s ease, background-color 0.25s ease;
-}
-.admin-trigger:hover {
-  opacity: 1;
-  background: var(--line-strong);
-}

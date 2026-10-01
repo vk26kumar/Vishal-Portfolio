@@ -1,22 +1,8 @@
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 import { ArrowUp } from 'lucide-react'
 import { usePortfolio } from '../context/DataContext'
 
 export default function Footer() {
-  const navigate = useNavigate()
   const { portfolioData } = usePortfolio()
-  const [clicks, setClicks] = useState(0)
-
-  // Hidden entry point: three clicks on the dot opens the CMS
-  const handleSecretClick = () => {
-    const next = clicks + 1
-    setClicks(next)
-    if (next >= 3) {
-      setClicks(0)
-      navigate('/admin')
-    }
-  }
 
   return (
     <footer className="relative border-t border-line">
@@ -47,12 +33,6 @@ export default function Footer() {
           </a>
         </div>
       </div>
-
-      <button
-        onClick={handleSecretClick}
-        className="admin-trigger"
-        aria-label="Admin access"
-      />
     </footer>
   )
 }

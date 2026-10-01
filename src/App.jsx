@@ -1,7 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import Portfolio from './pages/Portfolio'
-import Admin from './pages/Admin'
+
+// The content editor is a local development tool. It is not part of the
+// production build, so the published site has no /admin page.
+const Admin = import.meta.env.DEV ? lazy(() => import('./pages/Admin')) : null
 
 export default function App() {
   return (
@@ -23,7 +27,17 @@ export default function App() {
       />
       <Routes>
         <Route path="/" element={<Portfolio />} />
-        <Route path="/admin" element={<Admin />} />
+        {Admin && (
+          <Route
+            path="/admin"
+            element={
+              <Suspense fallback={null}>
+                <Admin />
+              </Suspense>
+            }
+          />
+        )}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   )
