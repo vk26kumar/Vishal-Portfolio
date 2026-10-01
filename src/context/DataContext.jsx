@@ -156,7 +156,7 @@ export const DEFAULT_DATA = {
       description: 'A hybrid detector fusing an unsupervised autoencoder with a supervised XGBoost classifier over 30 CIC-IDS2017 flow features, trained across four non-IID federated nodes with Flower/FedAvg so raw traffic never leaves a node. Adds per-prediction explanations via TreeSHAP, live Scapy packet capture and autonomous firewall blocking behind a dry-run guard.',
       metrics: [{ value: '99.23%', label: 'Accuracy' }, { value: '99.95%', label: 'Recall' }, { value: '0.95%', label: 'False positive rate' }],
       tech: 'Python, TensorFlow, XGBoost, Flower (FedAvg), Scapy, Streamlit, TreeSHAP, SQLite, NumPy, Pandas',
-      liveLink: 'https://adaptive-ai-driven-intrusion-detection-protection-system.streamlit.app',
+      liveLink: '',
       githubLink: 'https://github.com/vk26kumar/Adaptive-AI-Driven-Intrusion-Detection-Protection-System', featured: true, period: 'Mar 2026',
     },
     {
@@ -206,7 +206,8 @@ export const DEFAULT_DATA = {
       description: 'A vendor-facing mobile app for tracking industrial carbon emissions, with industry-specific inputs for textile, dairy, agriculture and manufacturing. Normalises emission scores against benchmarks, flags overused resources such as electricity, water, chemicals and fuel, and exports analytics to CSV. Localised into six languages.',
       metrics: [{ value: '6', label: 'Languages supported' }],
       tech: 'React Native, Expo, Expo Router, i18n, Data Visualization, CSV Export',
-      liveLink: 'https://drive.google.com/file/d/1OXa4h66cdnP-Os2Lz7PSScqKskfksDl8/view?usp=sharing',
+      liveLink: 'https://play.google.com/store/apps/details?id=com.carboniq.mobile&pcampaignid=web_share',
+      liveLabel: 'Play Store',
       githubLink: 'https://github.com/vk26kumar/Carbon-IQ', featured: false, period: '2026',
     },
     {
@@ -351,7 +352,7 @@ export const DEFAULT_DATA = {
 
 // VERSION TAG - increment this whenever you update DEFAULT_DATA
 // This forces the live site to pick up new data even if localStorage exists
-const DATA_VERSION = '2026-10-02-v18'
+const DATA_VERSION = '2026-10-02-v19'
 
 const DataContext = createContext(null)
 
