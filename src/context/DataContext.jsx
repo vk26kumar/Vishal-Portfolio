@@ -177,7 +177,7 @@ export const DEFAULT_DATA = {
       description: 'Reads a Google Sheets content calendar on a daily trigger, drafts captions with GPT-4o-mini and generates artwork, then sends a Telegram preview carrying POST and REGENERATE controls. Approved posts publish to Instagram and Facebook through the Graph APIs, including Reels, and the sheet is written back with status and timestamp.',
       metrics: [{ value: '~80%', label: 'Manual effort removed' }],
       tech: 'n8n, JavaScript, OpenAI APIs, Telegram Bot API, Google Sheets API, Cloudinary, Meta Graph API',
-      liveLink: 'https://social.markmyad.com/launches',
+      liveLink: '',
       githubLink: 'https://github.com/vk26kumar/Social-Media-Manager-Automation', featured: true, period: '2026',
     },
     {
@@ -217,16 +217,6 @@ export const DEFAULT_DATA = {
       tech: 'n8n, JavaScript, LLM APIs, Apify, Google Drive API, Gmail API',
       liveLink: '',
       githubLink: 'https://github.com/vk26kumar/resume-driven-job-automation-n8n', featured: false, period: '2026',
-    },
-    {
-      id: 15,
-      title: 'ApplyAI',
-      subtitle: 'AI Job Application Copilot',
-      description: 'Turns a job post screenshot into a ready-to-send cold email in under 30 seconds. Tesseract OCR reads the screenshot locally, GPT-4o pulls out the company, role, recruiter email and tech stack, and the app picks the best fit from a vault of eight role-specific resumes by keyword scoring. It then writes a personalised email and opens Gmail with the recipient, subject and body already filled in, and keeps a history of every application.',
-      metrics: [{ value: '<30 s', label: 'Screenshot to email' }, { value: '8', label: 'Resume categories' }],
-      tech: 'React 18, Node.js, Express, OpenAI GPT-4o, Tesseract.js, Multer, react-dropzone',
-      liveLink: '',
-      githubLink: '', featured: false, period: 'May 2026',
     },
     {
       id: 16,
@@ -361,7 +351,7 @@ export const DEFAULT_DATA = {
 
 // VERSION TAG - increment this whenever you update DEFAULT_DATA
 // This forces the live site to pick up new data even if localStorage exists
-const DATA_VERSION = '2026-10-02-v17'
+const DATA_VERSION = '2026-10-02-v18'
 
 const DataContext = createContext(null)
 
